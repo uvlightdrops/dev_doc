@@ -15,7 +15,8 @@ Standards and checklists for maintaining documentation quality, consistency, and
 
 ### 1. YAML Header Validation
 Every doc must have complete headers:
-- ✅ title (required, no PHASE prefix)
+- ✅ title (required)
+  - No PHASE prefix **except in `doc/phases/` folder** (context-appropriate there)
 - ✅ project (required)
 - ✅ scope (required, from approved list)
 - ✅ purpose (required, 1-2 sentences)
@@ -47,8 +48,23 @@ When editing doc paths:
 - Use grep: `grep -r "old/path" doc/`
 - Verify no broken links remain
 
-### 5. Consistency Checks
+### 5. Title & Filename Coherence
+- Title and filename must **meaningfully reflect** document content
+- Document filenames must use uppercase letters; keep the `.md` extension lowercase.
+- Filename should be **recognizable from title** (not necessarily exact slug match)
+  - ✅ Title: `Secrets Management Strategy` → Filename: `SECRETS_MANAGEMENT`
+  - ✅ Title: `TUI Endpoint Consumption (Phase I1)` → Filename: `I1_ENDPOINT_CONSUMPTION_TUI`
+  - ❌ Title: `Deployment Status Report` → Filename: `config.md` (unrelated)
+- Avoid generic filenames: be specific
+- Check: Does title clearly describe what the doc contains?
+- Check: Does filename clearly relate to title content?
+- Check: Would someone find this doc by searching the title?
+
+### 6. Consistency Checks
+Markdown headings at level 2 or higher (`##`, `###`, etc.) must not contain emojis.
+
 Before committing:
+- [ ] Title & filename match document content
 - [ ] All H2 headings have `[block-id]` tags
 - [ ] No duplicate block IDs within doc
 - [ ] Timestamps match format (±timezone)
@@ -63,9 +79,16 @@ Before any doc commit:
 ```
 YAML Headers:
   [ ] All 10 required fields present
-  [ ] Title has no PHASE prefix
+  [ ] Title: no PHASE prefix (except in doc/phases/ folder)
   [ ] Created from git, updated = today
   [ ] Status is valid
+
+Title & Filename:
+  [ ] Title clearly describes content (not generic)
+  [ ] Document filename uses uppercase letters (with lowercase `.md` extension)
+  [ ] Filename meaningfully reflects title (recognizable, not exact slug)
+  [ ] Neither is vague or unrelated to content
+  [ ] Someone could find doc by searching title or filename
 
 Semantic Blocks:
   [ ] H2 headings have [block-id] tags
@@ -86,6 +109,7 @@ Cross-References:
 
 Consistency:
   [ ] Timestamps format consistent
+  [ ] H2-and-higher Markdown headings contain no emojis
   [ ] No duplicate content across docs
   [ ] Related docs reference each other
   [ ] Scopes appropriate for folder location

@@ -11,6 +11,8 @@ allowed-tools: []
 
 Every major section (H2 heading) in a well-structured doc gets a unique semantic block ID, making docs queryable by tools and easier for humans to reference.
 
+**⚠️ CRITICAL: Tags must appear BOTH in YAML header AND on H2 headings themselves**
+
 ## Block ID Format
 
 - **Kebab-case:** `my-block-id`, not `MyBlockId` or `my_block_id`
@@ -19,22 +21,36 @@ Every major section (H2 heading) in a well-structured doc gets a unique semantic
 - **Unique:** No duplicates within a single doc
 - **Stable:** Don't change IDs once published (breaks links)
 
-## Tagging Format
+## Tagging Format - BOTH LOCATIONS REQUIRED
 
+### 1. YAML Header (REQUIRED)
+```yaml
+---
+semantic_blocks: [overview, component-inventory, design-principles, implementation-order, data-structures]
+---
+```
+
+### 2. H2 Heading Tags (REQUIRED - DO NOT SKIP!)
 ```markdown
-## Section Title [section-title-id]
+## Overview [overview]
 
 Content here...
 
-### Subsection
+### Subsection (no tag)
 (No tag needed - only H2 gets tagged)
 
 ---
 
-## Another Section [another-section-id]
+## Component Inventory [component-inventory]
 
 More content...
+
+## Design Principles [design-principles]
+
+...
 ```
+
+**Verification:** Count H2 headings = Count semantic_blocks entries
 
 ## Typical Block IDs in kicli-code-assist
 
