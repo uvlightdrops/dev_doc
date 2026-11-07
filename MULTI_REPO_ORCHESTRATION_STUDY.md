@@ -376,4 +376,3 @@ class StackctlAdapter:
 3. **Implementierung:** Refactor abhängig von Entscheidung
 4. **Integration Testing:** Test stackctl + server_management zusammen
 5. **Documentation:** Update User Guides & Architecture Docs
-

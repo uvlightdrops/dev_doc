@@ -466,4 +466,3 @@ Docs become machine-readable *because* they're human-trustworthy.
 **Make the agent's work transparent, reviewable, and reversible. Build trust through accuracy tracking. Let humans stay in control while agents handle repetitive coherence maintenance.**
 
 Not "agent writes docs". More like: "agent proposes improvements, humans validate, system tracks everything".
-

@@ -246,4 +246,3 @@ This framework is the **content layer** beneath ki-knowledge's **query layer**.
 - [ ] Create semantic-header template for all new docs
 - [ ] Implement Phase 1 validator script
 - [ ] Retrofit existing docs in kicli-code-assist as case study
-

@@ -296,7 +296,6 @@ Standard patterns: See /home/flow/dev_doc/yaml_config_administration.md
 
 ---
 
-**Status**: ✅ Maintained & Current  
 **Scope**: Cross-documentation coordination  
 **Next Review**: 2026-11-30
 

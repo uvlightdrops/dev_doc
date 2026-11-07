@@ -113,4 +113,3 @@ ProjectAnalyzer (core)
 - [ ] Generate HTML report with clickable links
 - [ ] Integrate into CI/CD (warn on broken relations)
 - [ ] Add layer-level aggregation (show backend/ as single super-node)
-

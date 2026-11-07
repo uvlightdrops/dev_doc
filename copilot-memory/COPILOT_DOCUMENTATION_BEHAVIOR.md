@@ -35,4 +35,3 @@ agent_project: kicli-code-assist
 5. Weiter zum nächsten Schritt
 
 **Tempo:** Bedacht, nicht gehetzt.
-
