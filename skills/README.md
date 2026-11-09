@@ -32,19 +32,41 @@ cd your-project/.github
 ln -s ../../../dev_doc/skills skills
 ```
 
-### 2. Update .gitignore
+This relative target assumes sibling checkouts in `~/dev_flow/` and the central
+repository at `~/dev_doc/`. In `dev_doc` itself, use `../skills` as the target.
+The link contains no skill definitions: the central checkout must also exist
+on each development machine. A repository-only cloud checkout cannot use this
+external link without making the central collection available first.
+
+### 2. Track the Link and Add Instructions
+
+Do not ignore `.github/skills`. Commit the symlink, not copies of the central
+files, together with `.github/copilot-instructions.md`:
 
 ```bash
-# your-project/.gitignore
-.github/skills  # Symlink to dev_doc/skills
+git add .github/skills .github/copilot-instructions.md
 ```
+
+In the instructions, require reviewing descriptions in
+`.github/skills/*/*/SKILL.md` before a task and loading every relevant skill.
+For documentation work, review **all** descriptions in
+`.github/skills/documentation/*/SKILL.md` and apply every relevant documentation
+skill. If automatic discovery or skill loading is unavailable, read the
+relevant `SKILL.md` directly. Report broken links instead of silently skipping
+the standards.
 
 ### 3. Access in Copilot
 
-In PyCharm or Claude Code:
-- Settings → GitHub Copilot → Customizations
-- Skills are automatically discovered from `.github/skills/`
-- Use `@skill-name` to reference a skill in conversation
+Copilot supports project skills in `.github/skills/`, including agent mode in
+supported JetBrains plugin versions. GitHub's documented layout is
+`.github/skills/<skill-name>/SKILL.md`; this collection keeps an additional
+category level. Do not assume every client recursively discovers it or follows
+external symlinks. The repository instructions provide a direct-read fallback.
+
+In Copilot CLI, use `/skills reload` and `/skills list` to inspect discovery.
+In PyCharm, start a new agent conversation after changing the setup and check
+which instructions and skills the plugin loads. Naming the skill explicitly
+also makes the intended workflow clear; invocation syntax depends on the client.
 
 ## All Skills by Category
 
@@ -93,18 +115,22 @@ In PyCharm or Claude Code:
 
 ## Adding Project-Specific Skills
 
-If a skill is only relevant to one project, create it in that project's `.github/skills-local/`:
+If a skill is only relevant to one project, use the supported alternate
+project location `.agents/skills/` rather than putting it through the central
+symlink:
 
 ```
 your-project/
 ├── .github/
 │   ├── skills → ../../../dev_doc/skills    # Central skills (symlink)
-│   └── skills-local/                       # Project-specific skills
-│       └── your-specific-skill/SKILL.md
-└── .gitignore: ".github/skills"
+│   └── copilot-instructions.md
+└── .agents/
+    └── skills/
+        └── your-specific-skill/SKILL.md
 ```
 
-Copilot will load both central and local skills.
+Check your client's supported locations and discovery. Keep project-local
+skills versioned and reference them in repository instructions if necessary.
 
 ## Adding New Skills to Central Registry
 
@@ -135,4 +161,4 @@ Detailed guides for each skill are in:
 ---
 
 **Maintained by:** Copilot + @uvlightdrops  
-**Last updated:** 2026-11-07
+**Last updated:** 2026-11-09
