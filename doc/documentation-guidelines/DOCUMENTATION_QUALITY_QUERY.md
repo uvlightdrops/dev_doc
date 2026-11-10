@@ -1,17 +1,26 @@
 ---
-title: "Documentation Quality & Maintenance Query"
-project: "cross-project"
-scope: "guidelines"
-created: 2026-11-01T23:58:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Update shared-documentation paths after relocation"
-status: "active"
-author: "@uvlightdrops"
+title: Documentation Quality & Maintenance Query
+project: cross-project
+scope: guidelines
+created: 2026-11-01 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+status: active
+author: '@uvlightdrops'
+purpose: Documentation-quality requirements and their interpretation
+agent_project: ki-ecosystem
+semantic_blocks:
+- user-request-2026-11-01t23-58-00-01-00
+- translation-interpretation
+- resulting-outputs
+- integration-with-existing-standards
 ---
 
 # Documentation Quality & Maintenance Query
 
-## User Request (2026-11-01T23:58:00+01:00)
+<a id="user-request-2026-11-01t2358000100"></a>
+
+## User Request (2026-11-01T23:58:00+01:00) [user-request-2026-11-01t23-58-00-01-00]
 
 > "Aktuell geht es einfach weiter darum das projekt gut zu durchschauen und wartbar zu halten.
 > Wie immer muss die doku gut gepflegt sein, für Mensch und Maschine.
@@ -21,7 +30,9 @@ author: "@uvlightdrops"
 > Falls du eine doc anfässt, so update oder setze den yaml header im markdown file.
 > Bei den daten muss stets auch die Stunde dabei stehen."
 
-## Translation & Interpretation
+<a id="translation--interpretation"></a>
+
+## Translation & Interpretation [translation-interpretation]
 
 **Core Requirements:**
 1. Maintain project documentation quality for both humans and machines
@@ -38,7 +49,9 @@ author: "@uvlightdrops"
 - Use ISO 8601 format with timezone
 - Store the query itself for future reference
 
-## Resulting Outputs
+<a id="resulting-outputs"></a>
+
+## Resulting Outputs [resulting-outputs]
 
 ### Created Documents
 
@@ -72,7 +85,9 @@ author: "@uvlightdrops"
 
 ---
 
-## Integration with Existing Standards
+<a id="integration-with-existing-standards"></a>
+
+## Integration with Existing Standards [integration-with-existing-standards]
 
 See:
 - [DOCUMENTATION_MAINTENANCE_STANDARDS.md](/home/flow/dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md) - Framework

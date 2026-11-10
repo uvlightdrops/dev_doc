@@ -1,19 +1,31 @@
 ---
-title: "Cross-Project Deployment Standards"
-project: "dev_doc"
-scope: "architecture"
-purpose: "Define deployment patterns and standards across all KI ecosystem projects"
-created: 2026-11-02T04:25:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Update shared-documentation paths after relocation"
-status: "active"
-agent_project: "kicli-code-assist"
-owner_team: "ecosystem-architecture"
+title: Cross-Project Deployment Standards
+project: dev_doc
+scope: architecture
+purpose: Define deployment patterns and standards across all KI ecosystem projects
+created: 2026-11-02 04
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+status: active
+agent_project: kicli-code-assist
+owner_team: ecosystem-architecture
 applies_to:
-  - "kicli-code-assist"
-  - "ki-knowledge"
-  - "ki-ecosystem"
-  - "yaml-cfg-wizard"
+- kicli-code-assist
+- ki-knowledge
+- ki-ecosystem
+- yaml-cfg-wizard
+semantic_blocks:
+- deployment-architecture-overview
+- directory-structure-per-project
+- standard-stages
+- configuration-loading-process
+- service-definition-schema
+- environment-variables
+- troubleshooting-common-issues
+- migration-path-from-legacy-deployments
+- cross-project-references
+- documentation-maintenance
+- references
 ---
 
 # Cross-Project Deployment Standards (KI Ecosystem)
@@ -24,7 +36,9 @@ applies_to:
 
 ---
 
-## 1. Deployment Architecture Overview
+<a id="1-deployment-architecture-overview"></a>
+
+## 1. Deployment Architecture Overview [deployment-architecture-overview]
 
 All KI ecosystem projects follow this 3-layer deployment model:
 
@@ -57,7 +71,9 @@ Layer 1: Service Definitions
 
 ---
 
-## 2. Directory Structure (Per Project)
+<a id="2-directory-structure-per-project"></a>
+
+## 2. Directory Structure (Per Project) [directory-structure-per-project]
 
 All projects follow this pattern:
 
@@ -88,7 +104,9 @@ project_root/
 
 ---
 
-## 3. Standard Stages
+<a id="3-standard-stages"></a>
+
+## 3. Standard Stages [standard-stages]
 
 All projects define these 4+ stages in `config/stages/`:
 
@@ -171,7 +189,9 @@ services:
 
 ---
 
-## 4. Configuration Loading Process
+<a id="4-configuration-loading-process"></a>
+
+## 4. Configuration Loading Process [configuration-loading-process]
 
 ### 4.1 Stage Selection
 
@@ -233,7 +253,9 @@ echo "Active stage: $(cat config/stages/.active_stage)"
 
 ---
 
-## 5. Service Definition Schema
+<a id="5-service-definition-schema"></a>
+
+## 5. Service Definition Schema [service-definition-schema]
 
 All `stack.yaml` files follow this schema:
 
@@ -292,7 +314,9 @@ stack:
 
 ---
 
-## 6. Environment Variables
+<a id="6-environment-variables"></a>
+
+## 6. Environment Variables [environment-variables]
 
 ### 6.1 Standard Variables (All Projects)
 
@@ -325,7 +349,9 @@ load_dotenv('config/.env.local')
 
 ---
 
-## 7. Troubleshooting & Common Issues
+<a id="7-troubleshooting--common-issues"></a>
+
+## 7. Troubleshooting & Common Issues [troubleshooting-common-issues]
 
 ### Issue: Stage Not Applied
 
@@ -386,7 +412,9 @@ config_key = "stack"
 
 ---
 
-## 8. Migration Path (From Legacy Deployments)
+<a id="8-migration-path-from-legacy-deployments"></a>
+
+## 8. Migration Path (From Legacy Deployments) [migration-path-from-legacy-deployments]
 
 ### Old Approach (Discouraged)
 ```
@@ -440,7 +468,9 @@ config/stages/production.yaml
 
 ---
 
-## 9. Cross-Project References
+<a id="9-cross-project-references"></a>
+
+## 9. Cross-Project References [cross-project-references]
 
 **For project-specific deployment docs**, link to this document:
 
@@ -465,7 +495,9 @@ This guide covers kicli-code-assist specific configuration...
 
 ---
 
-## 10. Documentation Maintenance
+<a id="10-documentation-maintenance"></a>
+
+## 10. Documentation Maintenance [documentation-maintenance]
 
 ### Header Standards
 
@@ -496,7 +528,9 @@ cross_references:
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 - **stackctl**: `/home/flow/dev_flow/stackctl/doc/README.md`
 - **ki_core config**: ki-core documentation

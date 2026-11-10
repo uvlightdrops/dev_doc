@@ -3,9 +3,24 @@ title: Dev_doc File Index
 project: Cross-Project
 scope: Navigation & Reference
 status: active
-created: 2026-11-05T23:30:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-05 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+purpose: Topic and audience index for shared knowledge
+agent_project: ki-ecosystem
+semantic_blocks:
+- documentation-guidelines
+- copilot-memory
+- agent-instructions
+- architecture
+- cli-management
+- server-management-historical
+- technical-guides
+- how-files-are-organized
+- search-tips
+- wissenswiki
+- content-boundary
+- maintenance-checklist
 ---
 
 # 📑 Complete File Index
@@ -14,7 +29,9 @@ update_reason: "Relocate shared documentation into doc/ and update references"
 
 ---
 
-## 📋 Documentation Guidelines
+<a id="-documentation-guidelines"></a>
+
+## 📋 Documentation Guidelines [documentation-guidelines]
 
 These files define how to organize, maintain, and evolve documentation across the ecosystem.
 
@@ -59,7 +76,9 @@ These files define how to organize, maintain, and evolve documentation across th
 
 ---
 
-## 🧠 Copilot Memory
+<a id="-copilot-memory"></a>
+
+## 🧠 Copilot Memory [copilot-memory]
 
 These files manage AI session memory, checkpoint tracking, and documentation behavior.
 
@@ -94,7 +113,9 @@ These files manage AI session memory, checkpoint tracking, and documentation beh
 
 ---
 
-## Agent Instructions
+<a id="agent-instructions"></a>
+
+## Agent Instructions [agent-instructions]
 
 Reusable cross-project instructions for agents working in KI ecosystem
 repositories.
@@ -117,7 +138,9 @@ repositories.
 
 ---
 
-## 🏗️ Architecture
+<a id="️-architecture"></a>
+
+## 🏗️ Architecture [architecture]
 
 System design patterns, multi-layer architecture, and integration patterns.
 
@@ -133,7 +156,9 @@ System design patterns, multi-layer architecture, and integration patterns.
 
 ---
 
-## 💻 CLI Management
+<a id="-cli-management"></a>
+
+## 💻 CLI Management [cli-management]
 
 CLI architecture patterns and delegation strategies.
 
@@ -158,7 +183,9 @@ CLI architecture patterns and delegation strategies.
 
 ---
 
-## 🖥️ Server Management (Historical)
+<a id="️-server-management-historical"></a>
+
+## 🖥️ Server Management (Historical) [server-management-historical]
 
 Historical server management design documents (mostly superseded by stackctl).
 
@@ -190,7 +217,9 @@ Historical server management design documents (mostly superseded by stackctl).
 
 ---
 
-## 📖 Technical Guides
+<a id="-technical-guides"></a>
+
+## 📖 Technical Guides [technical-guides]
 
 Technical documentation directly inside `doc/`.
 
@@ -303,7 +332,9 @@ Technical documentation directly inside `doc/`.
 
 ---
 
-## 🗂️ How Files Are Organized
+<a id="️-how-files-are-organized"></a>
+
+## 🗂️ How Files Are Organized [how-files-are-organized]
 
 ### By Purpose
 
@@ -343,7 +374,9 @@ Technical documentation directly inside `doc/`.
 
 ---
 
-## 🔍 Search Tips
+<a id="-search-tips"></a>
+
+## 🔍 Search Tips [search-tips]
 
 **"Where do I find...?"**
 
@@ -365,12 +398,16 @@ Technical documentation directly inside `doc/`.
 
 ---
 
-## Wissenswiki
+<a id="wissenswiki"></a>
+
+## Wissenswiki [wissenswiki]
 
 - [Konzept](wissenswiki/KONZEPT.md): Arbeitsraum, Wissensbloecke und Netzansicht.
 - [Bedienung](wissenswiki/BEDIENUNG.md): Start, Speicherorte und Betriebsgrenzen.
 
-## Content boundary
+<a id="content-boundary"></a>
+
+## Content boundary [content-boundary]
 
 The knowledge content is rooted at `doc/`; see the [folder hub](README.md).
 Technical [agent instructions](../agent-instructions/README.md) and
@@ -380,7 +417,9 @@ historical proposals do not establish current implementation behavior.
 
 ---
 
-## ✅ Maintenance Checklist
+<a id="-maintenance-checklist"></a>
+
+## ✅ Maintenance Checklist [maintenance-checklist]
 
 ### For New Contributors
 - [ ] Read `documentation-guidelines/ORGANIZATION_GUIDE.md`

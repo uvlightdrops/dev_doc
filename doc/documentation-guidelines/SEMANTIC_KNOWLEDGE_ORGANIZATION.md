@@ -4,16 +4,27 @@ project: cross-project
 agent_project: ki-knowledge
 scope: architecture
 purpose: Foundation for orphan-free, machine-readable documentation as semantic networks
-created: 2026-11-07T10:08:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-07 10
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 status: draft
 cross_references:
-  - ki-knowledge/docs (implementation)
-  - kicli-code-assist/doc (case study)
+- ki-knowledge/docs (implementation)
+- kicli-code-assist/doc (case study)
+semantic_blocks:
+- problem-statement
+- vision-semantic-knowledge-network
+- implementation-path-from-simple-to
+- preventing-orphans-mechanisms
+- semantic-blocks-practical-example
+- connection-to-ki-knowledge
+- questions-for-refinement
+- next-actions
 ---
 
-## Problem Statement
+<a id="problem-statement"></a>
+
+## Problem Statement [problem-statement]
 
 ### The Orphan Documentation Crisis
 **Symptom**: Documentation files exist but are unreachable from any navigation path
@@ -46,7 +57,9 @@ cross_references:
 
 ---
 
-## Vision: Semantic Knowledge Network
+<a id="vision-semantic-knowledge-network"></a>
+
+## Vision: Semantic Knowledge Network [vision-semantic-knowledge-network]
 
 ### Level 1: Explicit Metadata Layer
 Every `.md` file declares:
@@ -111,7 +124,9 @@ Each major section is tagged:
 
 ---
 
-## Implementation Path (from simple to sophisticated)
+<a id="implementation-path-from-simple-to-sophisticated"></a>
+
+## Implementation Path (from simple to sophisticated) [implementation-path-from-simple-to]
 
 ### Phase 1: Metadata Foundation (This Week)
 - Add YAML headers with `semantic_blocks` array to all docs
@@ -138,7 +153,9 @@ Each major section is tagged:
 
 ---
 
-## Preventing Orphans: Mechanisms
+<a id="preventing-orphans-mechanisms"></a>
+
+## Preventing Orphans: Mechanisms [preventing-orphans-mechanisms]
 
 ### 1. Mandatory Inbound Link Requirement
 Every doc must have at least one parent linking to it:
@@ -163,7 +180,9 @@ doc_audit.py
 
 ---
 
-## Semantic Blocks: Practical Example
+<a id="semantic-blocks-practical-example"></a>
+
+## Semantic Blocks: Practical Example [semantic-blocks-practical-example]
 
 ### Current Problem
 ```markdown
@@ -211,7 +230,9 @@ Potential enhancements...
 
 ---
 
-## Connection to ki-knowledge
+<a id="connection-to-ki-knowledge"></a>
+
+## Connection to ki-knowledge [connection-to-ki-knowledge]
 
 The ki-knowledge ecosystem needs exactly this:
 - **semantic-index**: Stores all relations + blocks
@@ -223,7 +244,9 @@ This framework is the **content layer** beneath ki-knowledge's **query layer**.
 
 ---
 
-## Questions for Refinement
+<a id="questions-for-refinement"></a>
+
+## Questions for Refinement [questions-for-refinement]
 
 1. **Stability Axis**: Should `status` be more granular?
    - `stable` | `draft` | `deprecated` | `under-review` | `proposed`?
@@ -240,7 +263,9 @@ This framework is the **content layer** beneath ki-knowledge's **query layer**.
 
 ---
 
-## Next Actions
+<a id="next-actions"></a>
+
+## Next Actions [next-actions]
 - [ ] Workshop: Refine this framework with team feedback
 - [ ] Decide on final metadata schema
 - [ ] Create semantic-header template for all new docs

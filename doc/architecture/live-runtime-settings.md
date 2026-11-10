@@ -1,10 +1,27 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Responsibilities and invariants of shared live configuration
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- responsibilities
+- invariants
+- activation-boundaries
+- portability
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Gemeinsame Live-Konfiguration der Python-Webanwendungen
 
 Stand: 2026-10-29. Geltungsbereich: ki-core, widgetkit-django,
 ki-knowledge und kicli-code-assist. Keine pauschale Hot-Reload-Zusage
 für andere Anwendungen oder Go-Dienste.
 
-## Verantwortlichkeiten
+<a id="verantwortlichkeiten"></a>
+
+## Verantwortlichkeiten [responsibilities]
 
 | Schicht | Aufgabe |
 | --- | --- |
@@ -19,7 +36,9 @@ Es gibt keinen zweiten GUI-spezifischen Konfigurationsspeicher.
 Credentials bleiben pro Projekt getrennt; gemeinsame Pakete teilen keine
 Geheimnisse zwischen Anwendungen.
 
-## Invarianten
+<a id="invarianten"></a>
+
+## Invarianten [invariants]
 
 - Felder werden aus dem zusammengeführten Schema registriert. Kein
   requestgesteuerter Dateipfad, kein unbeschränktes Roh-YAML-Schreiben.
@@ -41,7 +60,9 @@ Geheimnisse zwischen Anwendungen.
 - DB-eigene Einstellungen werden nicht durch wirkungslose YAML-Duplikate
   administriert. Ein Host kennzeichnet solche Felder und verlinkt den Eigentümer.
 
-## Aktivierung ist eine eigene Eigenschaft
+<a id="aktivierung-ist-eine-eigene-eigenschaft"></a>
+
+## Aktivierung ist eine eigene Eigenschaft [activation-boundaries]
 
 Ein erfolgreicher Dateischreibvorgang bedeutet nicht, dass alle alten Objekte
 ihre Konfiguration geändert haben. Die Anzeige nennt deshalb pro Feld die
@@ -58,7 +79,9 @@ Embedding-Reindexierung sind keine gewöhnlichen Live-Formularänderungen.
 Ein Konfigurationseditor soll dafür keine unsicheren globalen
 Settings-Mutationen während laufender Requests vornehmen.
 
-## Übertragbarkeit
+<a id="übertragbarkeit"></a>
+
+## Übertragbarkeit [portability]
 
 Weitere Python-Anwendungen können denselben `RuntimeSettings`-Dienst
 verwenden. Host-Authentifizierung, Projektroot und DB-/Neustartgrenzen

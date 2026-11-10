@@ -2,7 +2,21 @@
 # NOTE: Moved from kicli-code-assist to ~/dev_doc
 # Original: kicli-code-assist/docs/guides/YAML_CONFIG_SYSADMIN.md
 # This is generic - see project-specific implementations for adaptations
-update_reason: "Relocate shared documentation into doc/ and update references"
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+project: dev_doc
+scope: guides
+purpose: Administration and diagnosis of the ecosystem configuration consumers
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- configuration-consumers
+- shared-wizard
+- core-and-knowledge-layers
+- assist-legacy-loader
+- simulation-configuration
+- safe-configuration-edits
+updated: 2026-11-10 23
 ---
 
 # YAML-Konfiguration: Betrieb und Bedienung
@@ -27,7 +41,9 @@ Das Konzept und die weitere Entwicklung stehen separat in
 `yaml_cfg_wizard/doc/YAML_CONFIG_CONCEPTS.md`; historische Auszuege in
 `yaml_cfg_wizard/doc/YAML_CONFIG_ARCHIVE.md` (jeweils relativ zum Workspace).
 
-## Zuerst den tatsaechlichen Verbraucher bestimmen
+<a id="zuerst-den-tatsaechlichen-verbraucher-bestimmen"></a>
+
+## Zuerst den tatsaechlichen Verbraucher bestimmen [configuration-consumers]
 
 | Projekt | Verbraucher und heutige Bedienung |
 | --- | --- |
@@ -42,7 +58,9 @@ Eine vorhandene YAML-Datei oder Schema-Definition bedeutet nicht, dass alle
 Dienste sie lesen. Insbesondere ia3simworld und kicli nicht nach der ki-core-
 Rangfolge administrieren.
 
-## Gemeinsamer Wizard: Schichten, CLI und Installation
+<a id="gemeinsamer-wizard-schichten-cli-und-installation"></a>
+
+## Gemeinsamer Wizard: Schichten, CLI und Installation [shared-wizard]
 
 `ConfigResolver` merged von niedrig nach hoch: Defaults-Verzeichnis, explizite
 Defaults-Dateien, Profil-Verzeichnis/-Dateien, Stage-Verzeichnis/-Dateien,
@@ -96,7 +114,9 @@ ohne die danach fuer stdout aufgefuellten Schema-Defaults. `ConfigResolver`
 validiert nur mit explizitem `schema_file` (Draft 7, dort ohne FormatChecker).
 Keine pauschale Zusage vollstaendiger App-/Formatvalidierung ableiten.
 
-## ki-core-Schichten: ki-knowledge und kicli-code-assist
+<a id="ki-core-schichten-ki-knowledge-und-kicli-code-assist"></a>
+
+## ki-core-Schichten: ki-knowledge und kicli-code-assist [core-and-knowledge-layers]
 
 Niedrig nach hoch:
 
@@ -221,7 +241,9 @@ vollstaendige Secret-Redaktion beliebiger Schemafelder. Hoehere Layer koennen
 Dialog-Aenderungen weiter ueberdecken. Speichern aktualisiert weder laufende
 Clients noch deren Konfiguration; fuer verlaessliche Uebernahme neu starten.
 
-## kicli: bewusst abweichender Alt-Loader
+<a id="kicli-bewusst-abweichender-alt-loader"></a>
+
+## kicli: bewusst abweichender Alt-Loader [assist-legacy-loader]
 
 `kicli/config.py` sucht die erste vorhandene Datei:
 `kicli.yaml`, `config.yaml`, `.kicli.yaml`, `config/kicli.yaml`,
@@ -247,7 +269,9 @@ Vorhandene `scripts/select_profile.sh` und `scripts/run_with_profile.sh` sowie
 Beleg einer ki-core-Migration. Kein neuer Wizard-Webeditor angebunden.
 Neue CLI-Prozesse lesen neu; laufende Verbraucher bei Bedarf neu starten.
 
-## ia3simworld: mehrere reale Konfiglinien
+<a id="ia3simworld-mehrere-reale-konfiglinien"></a>
+
+## ia3simworld: mehrere reale Konfiglinien [simulation-configuration]
 
 Die Dienste haben getrennte Verbraucher. API-Gateway laedt Defaults
 `ports.yaml`, `node.yaml`, `auth.yaml`; World-Sim laedt zusaetzlich
@@ -378,7 +402,9 @@ YAML-Federation noch garantiert vollstaendige Offline-Konvergenz.
 Worker mit Master-URL brauchen ein getrenntes Federation-Secret; keine Secrets
 in diesen Guide, Editorseiten, Commit oder Support-Ausgaben uebernehmen.
 
-## Sicher speichern und Fehler eingrenzen
+<a id="sicher-speichern-und-fehler-eingrenzen"></a>
+
+## Sicher speichern und Fehler eingrenzen [safe-configuration-edits]
 
 Vor Aenderungen geschuetzte Sicherung der Ziel-Datei erstellen (nicht in Git);
 Ziel, Verbraucher, hoehere Schichten und Restart-Bedarf feststellen.

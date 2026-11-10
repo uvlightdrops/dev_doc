@@ -1,3 +1,14 @@
+---
+project: dev_doc
+scope: navigation
+purpose: Navigation and historical boundaries of shared CLI designs
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks: []
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Gemeinsame CLI-Architektur: historische Entwuerfe
 
 Am 2026-10-28 aus `ki-knowledge/docs/` hierher verschoben, weil diese Dokumente

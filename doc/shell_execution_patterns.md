@@ -1,10 +1,34 @@
+---
+project: dev_doc
+scope: guides
+purpose: Patterns for shell execution, process lifecycle and error handling
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- overview
+- basic-synchronous-execution
+- asynchronous-execution
+- streaming-output-real-time-feedback
+- security-preventing-command-injection
+- process-lifecycle-management
+- error-handling-logging
+- approval-workflow-hitl
+- context-managers-for-resource-cleanup
+- best-practices-summary
+- see-also
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Shell Execution Patterns & Best Practices
 
 **Status:** Reference guide for shell execution in Python applications  
 **Last Updated:** 2026-10-20  
 **Scope:** Cross-project - adapted for each application
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 Executing shell commands from Python applications requires careful handling of:
 - Process lifecycle (start, stop, signal handling)
@@ -18,7 +42,9 @@ This guide documents patterns for robust shell execution.
 
 ---
 
-## 1. Basic Synchronous Execution
+<a id="1-basic-synchronous-execution"></a>
+
+## 1. Basic Synchronous Execution [basic-synchronous-execution]
 
 ### Simple Command Execution
 
@@ -66,7 +92,9 @@ except subprocess.TimeoutExpired:
 
 ---
 
-## 2. Asynchronous Execution
+<a id="2-asynchronous-execution"></a>
+
+## 2. Asynchronous Execution [asynchronous-execution]
 
 ### Using asyncio.create_subprocess_exec
 
@@ -110,7 +138,9 @@ asyncio.run(main())
 
 ---
 
-## 3. Streaming Output (Real-time Feedback)
+<a id="3-streaming-output-real-time-feedback"></a>
+
+## 3. Streaming Output (Real-time Feedback) [streaming-output-real-time-feedback]
 
 ### Stream Output Line-by-Line
 
@@ -174,7 +204,9 @@ async def stream_output(stream):
 
 ---
 
-## 4. Security: Preventing Command Injection
+<a id="4-security-preventing-command-injection"></a>
+
+## 4. Security: Preventing Command Injection [security-preventing-command-injection]
 
 ### ❌ UNSAFE: Shell String Interpolation
 
@@ -219,7 +251,9 @@ subprocess.run(cmd)
 
 ---
 
-## 5. Process Lifecycle Management
+<a id="5-process-lifecycle-management"></a>
+
+## 5. Process Lifecycle Management [process-lifecycle-management]
 
 ### Starting and Stopping
 
@@ -276,7 +310,9 @@ with ProcessManager(["npm", "run", "dev"]) as pm:
 
 ---
 
-## 6. Error Handling & Logging
+<a id="6-error-handling--logging"></a>
+
+## 6. Error Handling & Logging [error-handling-logging]
 
 ### Comprehensive Error Handling
 
@@ -320,7 +356,9 @@ def execute_with_logging(cmd: list[str]) -> tuple[bool, str]:
 
 ---
 
-## 7. Approval Workflow (HITL)
+<a id="7-approval-workflow-hitl"></a>
+
+## 7. Approval Workflow (HITL) [approval-workflow-hitl]
 
 ### Human-in-the-Loop Approval
 
@@ -357,7 +395,9 @@ class ApprovalWorkflow:
 
 ---
 
-## 8. Context Managers for Resource Cleanup
+<a id="8-context-managers-for-resource-cleanup"></a>
+
+## 8. Context Managers for Resource Cleanup [context-managers-for-resource-cleanup]
 
 ```python
 class CommandContext:
@@ -397,7 +437,9 @@ except Exception as e:
 
 ---
 
-## Best Practices Summary
+<a id="best-practices-summary"></a>
+
+## Best Practices Summary [best-practices-summary]
 
 | Scenario | Pattern | Key Points |
 |----------|---------|-----------|
@@ -410,7 +452,9 @@ except Exception as e:
 
 ---
 
-## See Also
+<a id="see-also"></a>
+
+## See Also [see-also]
 
 - Python subprocess docs: https://docs.python.org/3/library/subprocess.html
 - asyncio docs: https://docs.python.org/3/library/asyncio.html

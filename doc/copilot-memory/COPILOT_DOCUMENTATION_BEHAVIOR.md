@@ -2,15 +2,21 @@
 project: kicli-code-assist
 scope: guides
 created: 2026-11-02 14
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
-status: current
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+status: active
 agent_project: kicli-code-assist
+purpose: Focused and reviewable documentation workflow for Copilot
+semantic_blocks:
+- verhalten-bei-dokumentationsarbeit
+- workflow
 ---
 
 # Copilot Documentation Guidelines
 
-## Verhalten bei Dokumentationsarbeit
+<a id="verhalten-bei-dokumentationsarbeit"></a>
+
+## Verhalten bei Dokumentationsarbeit [verhalten-bei-dokumentationsarbeit]
 
 ### Do's
 - ✅ Eine Änderung pro Response
@@ -26,7 +32,9 @@ agent_project: kicli-code-assist
 - ❌ Keine langen Erklärungen (User liest Doku selbst)
 - ❌ Nicht mehrere README-Dateien gleichzeitig erstellen
 
-## Workflow
+<a id="workflow"></a>
+
+## Workflow [workflow]
 
 1. Eine Aufgabe klar verstehen
 2. Nachfragen wenn unklar

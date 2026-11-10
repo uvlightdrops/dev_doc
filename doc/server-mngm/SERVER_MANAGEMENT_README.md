@@ -1,3 +1,25 @@
+---
+project: dev_doc
+scope: navigation
+purpose: Navigation and historical context for server-management proposals
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- overview
+- key-documents
+- architecture-at-a-glance
+- quick-start-for-implementation
+- design-decisions-summary
+- file-manifest
+- key-features
+- next-steps
+- faq
+- references
+- document-navigation
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Unified Server Management System - Executive Summary
 
 **Location:** Shared documentation in `~/dev_doc/doc/server-mngm/`, moved from
@@ -28,7 +50,9 @@ workflow. Current references:
 [ki-knowledge](../../../dev_flow/ki-knowledge/doc/guides/DJANGO_DEV.md),
 [Assist](../../../dev_flow/kicli-code-assist/README.md).
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 This is a comprehensive design for a **Unified Server Management System** for kicli-code-assist and the broader KI ecosystem (ki-knowledge, ki-core, stackctl).
 
@@ -44,7 +68,9 @@ This is a comprehensive design for a **Unified Server Management System** for ki
 
 ---
 
-## Key Documents
+<a id="key-documents"></a>
+
+## Key Documents [key-documents]
 
 ### 1. **SERVER_MANAGEMENT_DESIGN.md** (Architecture Overview)
    - **What:** Executive summary, problem analysis, three architectural options
@@ -99,7 +125,9 @@ This is a comprehensive design for a **Unified Server Management System** for ki
 
 ---
 
-## Architecture at a Glance
+<a id="architecture-at-a-glance"></a>
+
+## Architecture at a Glance [architecture-at-a-glance]
 
 ```
 User Interfaces:
@@ -126,7 +154,9 @@ Managed Services
 
 ---
 
-## Quick Start (For Implementation)
+<a id="quick-start-for-implementation"></a>
+
+## Quick Start (For Implementation) [quick-start-for-implementation]
 
 ### Week 1: Core Registry + CLI (MVP)
 ```bash
@@ -178,7 +208,9 @@ Managed Services
 
 ---
 
-## Design Decisions (Summary)
+<a id="design-decisions-summary"></a>
+
+## Design Decisions (Summary) [design-decisions-summary]
 
 | Decision | Choice | Why |
 |----------|--------|-----|
@@ -192,7 +224,9 @@ Managed Services
 
 ---
 
-## File Manifest
+<a id="file-manifest"></a>
+
+## File Manifest [file-manifest]
 
 ```
 doc/
@@ -239,7 +273,9 @@ config/
 
 ---
 
-## Key Features
+<a id="key-features"></a>
+
+## Key Features [key-features]
 
 ### ✅ What Gets Solved
 
@@ -300,7 +336,9 @@ projects:
 
 ---
 
-## Next Steps
+<a id="next-steps"></a>
+
+## Next Steps [next-steps]
 
 ### For Review
 1. Read **SERVER_MANAGEMENT_DESIGN.md** (high-level architecture)
@@ -320,7 +358,9 @@ projects:
 
 ---
 
-## FAQ
+<a id="faq"></a>
+
+## FAQ [faq]
 
 **Q: Why Hybrid (Option C) instead of just Daemon (Option A)?**
 A: Hybrid provides flexibility (optional supervisor), performance (cached state), and cross-platform compatibility. Option A adds complexity and daemon management overhead for dev environments.
@@ -342,7 +382,9 @@ A: Out of scope for MVP (dev environment). Future extension: read pod status fro
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 - **Problem Statement:** Multiple ghost processes, no central visibility
 - **Current State:** Each project manages processes independently
@@ -353,7 +395,9 @@ A: Out of scope for MVP (dev environment). Future extension: read pod status fro
 
 ---
 
-## Document Navigation
+<a id="document-navigation"></a>
+
+## Document Navigation [document-navigation]
 
 ```
                     ┌─────────────────────────┐

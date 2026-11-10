@@ -1,16 +1,41 @@
+---
+project: dev_doc
+scope: guides
+purpose: Application security practices and review checklist
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- overview
+- file-system-security
+- configuration-secrets
+- input-validation
+- authentication-authorization
+- logging-auditing
+- https-tls
+- dependency-security
+- security-checklist
+- see-also
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Security Guidelines for Applications
 
 **Status:** Reference guide for security best practices  
 **Last Updated:** 2026-10-20  
 **Scope:** Cross-project - adapt for your specific application
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 This guide covers common security patterns for Python applications handling file operations, configuration, and external integrations.
 
 ---
 
-## 1. File System Security
+<a id="1-file-system-security"></a>
+
+## 1. File System Security [file-system-security]
 
 ### Path Traversal Prevention
 
@@ -84,7 +109,9 @@ def is_secure_file(path: str) -> bool:
 
 ---
 
-## 2. Configuration & Secrets
+<a id="2-configuration--secrets"></a>
+
+## 2. Configuration & Secrets [configuration-secrets]
 
 ### Secret Detection & Filtering
 
@@ -195,7 +222,9 @@ CONFIG = {
 
 ---
 
-## 3. Input Validation
+<a id="3-input-validation"></a>
+
+## 3. Input Validation [input-validation]
 
 ### Command Injection Prevention
 
@@ -264,7 +293,9 @@ html = f"<div>{escape(user_input)}</div>"  # Shows literal string
 
 ---
 
-## 4. Authentication & Authorization
+<a id="4-authentication--authorization"></a>
+
+## 4. Authentication & Authorization [authentication-authorization]
 
 ### API Key Management
 
@@ -309,7 +340,9 @@ def require_api_key(f):
 
 ---
 
-## 5. Logging & Auditing
+<a id="5-logging--auditing"></a>
+
+## 5. Logging & Auditing [logging-auditing]
 
 ### Audit Logging
 
@@ -368,7 +401,9 @@ audit_log.info(log_msg)
 
 ---
 
-## 6. HTTPS & TLS
+<a id="6-https--tls"></a>
+
+## 6. HTTPS & TLS [https-tls]
 
 ### Force HTTPS in Production
 
@@ -408,7 +443,9 @@ requests.get(
 
 ---
 
-## 7. Dependency Security
+<a id="7-dependency-security"></a>
+
+## 7. Dependency Security [dependency-security]
 
 ### Keep Dependencies Updated
 
@@ -433,7 +470,9 @@ requests==2.28.*
 
 ---
 
-## Security Checklist
+<a id="security-checklist"></a>
+
+## Security Checklist [security-checklist]
 
 - [ ] No hardcoded secrets (use environment variables)
 - [ ] Input validation on all user inputs
@@ -452,7 +491,9 @@ requests==2.28.*
 
 ---
 
-## See Also
+<a id="see-also"></a>
+
+## See Also [see-also]
 
 - OWASP Top 10: https://owasp.org/www-project-top-ten/
 - CWE/SANS Top 25: https://cwe.mitre.org/top25/

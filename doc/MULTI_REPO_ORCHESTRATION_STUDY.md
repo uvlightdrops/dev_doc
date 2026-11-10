@@ -1,12 +1,32 @@
 ---
 # Multi-Repo Orchestration: Architecture Study
-Status: Foundation Phase
-Created: 2026-10-28
+# Original source creation date: 2026-10-28 (hour not recorded).
+# created records the first Git appearance, not an inferred source creation hour.
 References: stackctl, server_management (ki-core), ki.yaml, stack.yaml
-update_reason: "Update shared-documentation paths after relocation"
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+historical_status: Foundation Phase
+project: dev_doc
+scope: architecture
+purpose: Study of repository, service and configuration orchestration options
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: draft
+semantic_blocks:
+- executive-summary
+- bestehende-implementierungen
+- das-overlap-problem
+- best-practice-patterns-forschung
+- architektur-optionen
+- empfehlung-fuer-kicli-code-assist
+- offene-fragen
+- referenzen-quellen
+- naechste-schritte
+updated: 2026-11-10 23
 ---
 
-## Executive Summary
+<a id="executive-summary"></a>
+
+## Executive Summary [executive-summary]
 
 Bei polyrepo-Architekturen (wie `/home/flow/dev_flow/`) entstehen drei orthogonale Probleme:
 
@@ -20,7 +40,9 @@ Bestehende Lösungen: **stackctl** (Deployment-fokussiert) und **server_manageme
 
 ---
 
-## 1. Bestehende Implementierungen
+<a id="1-bestehende-implementierungen"></a>
+
+## 1. Bestehende Implementierungen [bestehende-implementierungen]
 
 ### stackctl (Bestehend in /home/flow/dev_flow/stackctl)
 
@@ -119,7 +141,9 @@ services:
 
 ---
 
-## 2. Das Overlap-Problem
+<a id="2-das-overlap-problem"></a>
+
+## 2. Das Overlap-Problem [das-overlap-problem]
 
 ### Scenario 1: Ich bin Developer
 ```bash
@@ -158,7 +182,9 @@ stackctl -t local start      # Start alle Services
 
 ---
 
-## 3. Best Practice Patterns (Forschung)
+<a id="3-best-practice-patterns-forschung"></a>
+
+## 3. Best Practice Patterns (Forschung) [best-practice-patterns-forschung]
 
 ### Pattern 1: Google Polyrepo (CitC)
 - Zentrale Konfiguration pro Service
@@ -203,7 +229,9 @@ autorestart=true
 
 ---
 
-## 4. Architektur-Optionen
+<a id="4-architektur-optionen"></a>
+
+## 4. Architektur-Optionen [architektur-optionen]
 
 ### Option A: Alles in stackctl (Consolidation)
 
@@ -305,7 +333,9 @@ class StackctlAdapter:
 
 ---
 
-## 5. Empfehlung für kicli-code-assist
+<a id="5-empfehlung-für-kicli-code-assist"></a>
+
+## 5. Empfehlung für kicli-code-assist [empfehlung-fuer-kicli-code-assist]
 
 ### Status Quo (nach Phase 5.5.1 Refactor)
 - ✅ ki.yaml mit `services:` Sektion
@@ -325,7 +355,9 @@ class StackctlAdapter:
 
 ---
 
-## 6. Offene Fragen
+<a id="6-offene-fragen"></a>
+
+## 6. Offene Fragen [offene-fragen]
 
 1. **Konfiguration Ownership:** Wer definiert den "canonical" Service Name?
    - `stack.yaml: services: [api]` 
@@ -350,7 +382,9 @@ class StackctlAdapter:
 
 ---
 
-## 7. Referenzen & Quellen
+<a id="7-referenzen--quellen"></a>
+
+## 7. Referenzen & Quellen [referenzen-quellen]
 
 ### Bestehende Implementierungen
 - `/home/flow/dev_flow/stackctl/README.md` - stackctl Doku
@@ -370,7 +404,9 @@ class StackctlAdapter:
 
 ---
 
-## 8. Nächste Schritte
+<a id="8-nächste-schritte"></a>
+
+## 8. Nächste Schritte [naechste-schritte]
 
 1. **Review:** Nimm diese Study und entscheide: Option A, B, oder C?
 2. **Entscheidung:** Kommuniziere Architektur-Plan

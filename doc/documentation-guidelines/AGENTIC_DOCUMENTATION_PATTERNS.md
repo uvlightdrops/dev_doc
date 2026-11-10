@@ -4,16 +4,35 @@ project: cross-project
 agent_project: ki-knowledge
 scope: architecture
 purpose: Best practices for agents modifying documentation while maintaining human trust, auditability, and coherence
-created: 2026-11-07T10:40:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-07 10
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 status: draft
 cross_references:
-  - SEMANTIC_KNOWLEDGE_ORGANIZATION.md (foundation)
-  - ki-knowledge/docs (implementation target)
+- SEMANTIC_KNOWLEDGE_ORGANIZATION.md (foundation)
+- ki-knowledge/docs (implementation target)
+semantic_blocks:
+- core-tension
+- transparency-over-automation
+- signed-edit-log
+- locked-and-safe-zones
+- change-proposals
+- freshness-metadata
+- conflict-resolution
+- section-versioning
+- audit-trail
+- agent-trust-scoring
+- failure-recovery
+- collaboration-contract
+- incremental-adoption
+- open-questions
+- knowledge-integration
+- core-principle
 ---
 
-## Free-Form Thinking: The Core Tension
+<a id="free-form-thinking-the-core-tension"></a>
+
+## Free-Form Thinking: The Core Tension [core-tension]
 
 **The Problem We're Actually Solving:**
 
@@ -35,7 +54,9 @@ An agent can write code, generate docs, update examples... fast. But humans need
 
 ---
 
-## Core Principle: Transparency Over Automation
+<a id="core-principle-transparency-over-automation"></a>
+
+## Core Principle: Transparency Over Automation [transparency-over-automation]
 
 Don't hide what the agent changed. Make it **obvious**. Make it **reviewable**. Make it **undoable**.
 
@@ -43,7 +64,9 @@ This is different from code. Code changes are small and precise. Doc changes are
 
 ---
 
-## Pattern 1: The Signed Commit Block
+<a id="pattern-1-the-signed-commit-block"></a>
+
+## Pattern 1: The Signed Commit Block [signed-edit-log]
 
 When an agent modifies a doc, it adds metadata to every change:
 
@@ -73,7 +96,9 @@ The ProjectAnalyzer consists of...
 
 ---
 
-## Pattern 2: Locked Blocks & Safe Zones
+<a id="pattern-2-locked-blocks--safe-zones"></a>
+
+## Pattern 2: Locked Blocks & Safe Zones [locked-and-safe-zones]
 
 Not all parts of a doc should be agent-writable.
 
@@ -98,7 +123,7 @@ agent_permissions:
 
 **In the doc itself, mark the zones:**
 
-```markdown
+````markdown
 ## Design Rationale [HUMAN-OWNED]
 Why did we choose this architecture? Because...
 *(Only humans write this. Agents may suggest edits as comments.)*
@@ -114,7 +139,7 @@ results = analyzer.analyze()
 ## Performance Characteristics [AGENT-MAINTAINED-LOW-CONFIDENCE]
 Typical analysis time: 4.6 seconds per 100 files
 *(Agent computed this from benchmarks. Verify against your environment.)*
-```
+````
 
 **Why?**
 - Humans don't have to defend their design choices to an agent
@@ -123,7 +148,9 @@ Typical analysis time: 4.6 seconds per 100 files
 
 ---
 
-## Pattern 3: Change Proposals, Not Invasive Edits
+<a id="pattern-3-change-proposals-not-invasive-edits"></a>
+
+## Pattern 3: Change Proposals, Not Invasive Edits [change-proposals]
 
 Agent shouldn't just modify docs silently. It should:
 
@@ -171,7 +198,9 @@ agent_change_proposal:
 
 ---
 
-## Pattern 4: Metadata for Freshness & Staleness
+<a id="pattern-4-metadata-for-freshness--staleness"></a>
+
+## Pattern 4: Metadata for Freshness & Staleness [freshness-metadata]
 
 Each section tracks its "last verified" and "auto-update frequency":
 
@@ -219,7 +248,9 @@ freshness_metadata:
 
 ---
 
-## Pattern 5: Conflict Resolution in Multi-Block Consistency
+<a id="pattern-5-conflict-resolution-in-multi-block-consistency"></a>
+
+## Pattern 5: Conflict Resolution in Multi-Block Consistency [conflict-resolution]
 
 Hardest problem: Agent updates Block A, and now it contradicts Block B (which is human-maintained).
 
@@ -257,11 +288,13 @@ consistency_checks:
 
 ---
 
-## Pattern 6: Versioning Changes, Not Just Files
+<a id="pattern-6-versioning-changes-not-just-files"></a>
+
+## Pattern 6: Versioning Changes, Not Just Files [section-versioning]
 
 When an agent makes significant changes, it documents it like a code changelog:
 
-```markdown
+````markdown
 ## Code Examples [AUTO-MAINTAINED]
 
 **Version History:**
@@ -275,6 +308,7 @@ Here's how to use it:
 analyzer = ProjectAnalyzer(project_root="/path/to/project")
 results = await analyzer.analyze_async()
 ```
+````
 
 **Why?**
 - Readers see "what changed" without git history
@@ -284,7 +318,9 @@ results = await analyzer.analyze_async()
 
 ---
 
-## Pattern 7: The Audit Trail for Blame & Trust
+<a id="pattern-7-the-audit-trail-for-blame--trust"></a>
+
+## Pattern 7: The Audit Trail for Blame & Trust [audit-trail]
 
 Every change to doc metadata should answer:
 - WHO changed it? (Human name or Agent ID)
@@ -324,7 +360,9 @@ audit_trail:
 
 ---
 
-## Pattern 8: Trust Scoring Over Time
+<a id="pattern-8-trust-scoring-over-time"></a>
+
+## Pattern 8: Trust Scoring Over Time [agent-trust-scoring]
 
 Each agent builds a "trust score" based on its proposal accuracy:
 
@@ -364,7 +402,9 @@ agent_stats:
 
 ---
 
-## The Scary Part: When Agents Are Wrong
+<a id="the-scary-part-when-agents-are-wrong"></a>
+
+## The Scary Part: When Agents Are Wrong [failure-recovery]
 
 **Scenario:** Agent confidently updates a doc section. Later, human realizes it's wrong.
 
@@ -397,7 +437,9 @@ rejection_postmortem:
 
 ---
 
-## The Social Contract: Humans & Agents in Docs
+<a id="the-social-contract-humans--agents-in-docs"></a>
+
+## The Social Contract: Humans & Agents in Docs [collaboration-contract]
 
 **Agent promises:**
 - "I will tell you what I changed and why"
@@ -421,7 +463,9 @@ rejection_postmortem:
 
 ---
 
-## Practical: Starting Simple
+<a id="practical-starting-simple"></a>
+
+## Practical: Starting Simple [incremental-adoption]
 
 Don't implement all patterns day one. Start:
 
@@ -436,7 +480,9 @@ Each pattern builds on the previous.
 
 ---
 
-## Open Questions I'm Still Thinking About
+<a id="open-questions-im-still-thinking-about"></a>
+
+## Open Questions I'm Still Thinking About [open-questions]
 
 - **Partial merges**: What if a proposal has 3 changes, human approves 2 but rejects 1? Do we need micro-commits?
 - **AI hallucination in docs**: What if agent confidently writes something false? How do we detect this?
@@ -449,7 +495,9 @@ These matter for v2.
 
 ---
 
-## Tying Back to ki-knowledge
+<a id="tying-back-to-ki-knowledge"></a>
+
+## Tying Back to ki-knowledge [knowledge-integration]
 
 This framework should feed into ki-knowledge's query layer:
 - **Knowledge graph**: Agents build it by maintaining consistent docs
@@ -461,7 +509,9 @@ Docs become machine-readable *because* they're human-trustworthy.
 
 ---
 
-## TL;DR: The Principle
+<a id="tldr-the-principle"></a>
+
+## TL;DR: The Principle [core-principle]
 
 **Make the agent's work transparent, reviewable, and reversible. Build trust through accuracy tracking. Let humans stay in control while agents handle repetitive coherence maintenance.**
 

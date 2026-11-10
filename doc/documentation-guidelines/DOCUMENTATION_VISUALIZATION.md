@@ -4,26 +4,27 @@ project: kicli-code-assist
 agent_project: ki-knowledge
 scope: Documentation Tools / Meta
 purpose: Script to visualize semantic doc relations as GraphViz graphs
-created: 2026-11-07T12:31:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
-status: stable
-
+created: 2026-11-07 12
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+status: active
 semantic_blocks:
-  - id: graph-generation
-    type: implementation
-    status: stable
-    version: 1.0
-    
-  - id: visualization-examples
-    type: implementation
-    status: draft
-    version: 1.0
+- id: overview
+- id: usage
+- id: graph-generation
+  type: implementation
+  status: stable
+  version: 1.0
+- id: how-it-works
+- id: features
+- id: next-steps
 ---
 
 # Documentation Visualization & Graphs
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 Script: `scripts/generate_doc_graphs.py`
 
@@ -32,7 +33,9 @@ Automatically generates GraphViz visualizations from semantic doc relations:
 - **Master graph**: All docs across entire doc/ tree
 - **README generation**: Markdown tables from doc metadata
 
-## Usage
+<a id="usage"></a>
+
+## Usage [usage]
 
 ### Generate Folder Graphs
 
@@ -90,7 +93,9 @@ ProjectAnalyzer (core)
   └── depends-on ← Endpoint Integration
 ```
 
-## How It Works
+<a id="how-it-works"></a>
+
+## How It Works [how-it-works]
 
 1. **Scan**: Find all `.md` files in `doc/`
 2. **Parse**: Extract YAML header + `relations` field
@@ -98,7 +103,9 @@ ProjectAnalyzer (core)
 4. **Filter**: Per-folder subgraphs only include internal relations
 5. **Render**: GraphViz dot → SVG
 
-## Features
+<a id="features"></a>
+
+## Features [features]
 
 - **Automatic folder grouping**: Subgraphs per directory
 - **Color-coded edges**: See relation types at a glance
@@ -106,7 +113,9 @@ ProjectAnalyzer (core)
 - **Machine-readable**: DOT files as git artifacts
 - **README generation**: Auto-markdown tables
 
-## Next Steps
+<a id="next-steps"></a>
+
+## Next Steps [next-steps]
 
 - [ ] Add cycle detection (circular relation warnings)
 - [ ] Add orphan detection (docs with zero in/out edges)

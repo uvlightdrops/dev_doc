@@ -3,16 +3,24 @@ title: Copilot Memory Management
 scope: AI session memory and checkpoint tracking
 purpose: How to use and manage Copilot memory across sessions
 status: active
-created: 2026-11-05T23:35:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-05 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+project: dev_doc
+agent_project: ki-ecosystem
+semantic_blocks:
+- files-in-this-folder
+- quick-reference
+- session-setup-checklist
 ---
 
 # 🧠 Copilot Memory & Sessions
 
 This folder contains guidance on using Copilot session memory, checkpoint tracking, and AI-assisted session coordination.
 
-## 📋 Files in This Folder
+<a id="-files-in-this-folder"></a>
+
+## 📋 Files in This Folder [files-in-this-folder]
 
 ### `COPILOT_MEMORY_MAP.md`
 **How to use Copilot session memory (store, vote, management)**
@@ -38,7 +46,9 @@ This folder contains guidance on using Copilot session memory, checkpoint tracki
 - Documentation timing
 - **→ Reference when** setting up doc-focused sessions
 
-## 🎯 Quick Reference
+<a id="-quick-reference"></a>
+
+## 🎯 Quick Reference [quick-reference]
 
 ### When to Store Memory
 - ✅ Verified best practices or patterns
@@ -57,7 +67,9 @@ This folder contains guidance on using Copilot session memory, checkpoint tracki
 - **Upvote**: Verified, useful, correct
 - **Downvote**: Outdated, incorrect, or user requested deletion
 
-## ✅ Session Setup Checklist
+<a id="-session-setup-checklist"></a>
+
+## ✅ Session Setup Checklist [session-setup-checklist]
 
 - [ ] Read relevant checkpoint from prior sessions
 - [ ] Review MEMORY_MAP.md for memory best practices

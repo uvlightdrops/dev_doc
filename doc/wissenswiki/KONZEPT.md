@@ -2,20 +2,21 @@
 project: dev_doc
 agent_project: ki-knowledge
 scope: architecture
-created: null
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-10 20
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 status: draft
 semantic_blocks:
-  - intent
-  - model
-  - implementation
-  - view-config
-  - future
+- intent
+- model
+- implementation
+- view-config
+- future
 relations:
-  - target: BEDIENUNG.md
-    type: references
-    reason: "Bedienung und Grenzen der vorhandenen Umsetzung"
+- target: BEDIENUNG.md
+  type: references
+  reason: Bedienung und Grenzen der vorhandenen Umsetzung
+purpose: Concept and boundaries of the Wissenswiki workspace and network view
 ---
 
 # Wissenswiki: Konzept

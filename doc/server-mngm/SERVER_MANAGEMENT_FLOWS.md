@@ -1,6 +1,27 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Historical process and data-flow diagrams for server management
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- system-overview-option-c-hybrid
+- state-flow-diagram-starting-a-service
+- detection-recovery-orphaned-process
+- data-storage-structure
+- concurrency-locking
+- webui-component-layout
+- dependency-resolution-graph
+- error-scenarios-handling
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Server Management System - Architecture Diagrams & Flows
 
-## 1. System Overview (Option C: Hybrid)
+<a id="1-system-overview-option-c-hybrid"></a>
+
+## 1. System Overview (Option C: Hybrid) [system-overview-option-c-hybrid]
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -90,7 +111,9 @@
 
 ---
 
-## 2. State Flow Diagram: Starting a Service
+<a id="2-state-flow-diagram-starting-a-service"></a>
+
+## 2. State Flow Diagram: Starting a Service [state-flow-diagram-starting-a-service]
 
 ```
 START: user runs "kicli-assist server:start kicli-frontend"
@@ -193,7 +216,9 @@ END
 
 ---
 
-## 3. Detection & Recovery: Orphaned Process
+<a id="3-detection--recovery-orphaned-process"></a>
+
+## 3. Detection & Recovery: Orphaned Process [detection-recovery-orphaned-process]
 
 ```
 BACKGROUND SUPERVISOR LOOP (Every 30 seconds)
@@ -284,7 +309,9 @@ LOOP (sleep 30s, repeat)
 
 ---
 
-## 4. Data Storage Structure
+<a id="4-data-storage-structure"></a>
+
+## 4. Data Storage Structure [data-storage-structure]
 
 ### Directory Hierarchy
 
@@ -366,7 +393,9 @@ LOOP (sleep 30s, repeat)
 
 ---
 
-## 5. Concurrency & Locking
+<a id="5-concurrency--locking"></a>
+
+## 5. Concurrency & Locking [concurrency-locking]
 
 ### Lock Acquisition Pattern
 
@@ -413,7 +442,9 @@ If timeout reached:
 
 ---
 
-## 6. WebUI Component Layout
+<a id="6-webui-component-layout"></a>
+
+## 6. WebUI Component Layout [webui-component-layout]
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
@@ -489,7 +520,9 @@ Click row to expand ▼
 
 ---
 
-## 7. Dependency Resolution Graph
+<a id="7-dependency-resolution-graph"></a>
+
+## 7. Dependency Resolution Graph [dependency-resolution-graph]
 
 ```
 kicli-code-assist project:
@@ -556,7 +589,9 @@ STOP kicli-backend resolution tree:
 
 ---
 
-## 8. Error Scenarios & Handling
+<a id="8-error-scenarios--handling"></a>
+
+## 8. Error Scenarios & Handling [error-scenarios-handling]
 
 ```
 SCENARIO 1: Port Conflict

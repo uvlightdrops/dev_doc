@@ -3,16 +3,24 @@ title: Documentation Guidelines
 scope: How to organize and maintain documentation
 purpose: Central location for doc standards across all projects
 status: active
-created: 2026-11-05T23:35:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-05 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+project: dev_doc
+agent_project: ki-ecosystem
+semantic_blocks:
+- files-in-this-folder
+- quick-checklist-creating-new-docs
+- quick-checklist-archiving-docs
 ---
 
 # 📖 Documentation Guidelines
 
 This folder contains standards, checklists, and best practices for organizing and maintaining documentation across the KI ecosystem.
 
-## 📋 Files in This Folder
+<a id="-files-in-this-folder"></a>
+
+## 📋 Files in This Folder [files-in-this-folder]
 
 ### `DOCUMENTATION_ORGANIZATION_GUIDE.md`
 **How to structure project documentation**
@@ -63,7 +71,9 @@ This folder contains standards, checklists, and best practices for organizing an
 - Tool usage: `python3 scripts/generate_doc_graphs.py`
 - **→ Use to understand cross-doc dependencies visually**
 
-## ✅ Quick Checklist: Creating New Docs
+<a id="-quick-checklist-creating-new-docs"></a>
+
+## ✅ Quick Checklist: Creating New Docs [quick-checklist-creating-new-docs]
 
 - [ ] Use YAML header (copy from MAINTENANCE_STANDARDS.md)
 - [ ] Clear, descriptive filename
@@ -73,7 +83,9 @@ This folder contains standards, checklists, and best practices for organizing an
 - [ ] Update navigation README in parent folder
 - [ ] Update INDEX.md if applicable
 
-## ✅ Quick Checklist: Archiving Docs
+<a id="-quick-checklist-archiving-docs"></a>
+
+## ✅ Quick Checklist: Archiving Docs [quick-checklist-archiving-docs]
 
 - [ ] Update YAML header: `status: archived`
 - [ ] Add `update_reason: Superseded by <doc>`

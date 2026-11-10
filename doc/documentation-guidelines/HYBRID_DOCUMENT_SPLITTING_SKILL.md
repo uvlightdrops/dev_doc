@@ -4,12 +4,21 @@ project: cross-project
 agent_project: kicli-code-assist
 scope: documentation-patterns
 purpose: Complete reference guide for splitting hybrid docs that mix backend and frontend concerns
-created: 2026-11-07T14:35:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-07 14
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 status: active
 confidence_level: medium
-target_repositories: ["kicli-code-assist"]
+target_repositories:
+- kicli-code-assist
+semantic_blocks:
+- overview
+- process-steps
+- checklist
+- key-guidelines
+- confidence-limitations
+- related-patterns
+- examples
 ---
 
 # Hybrid Document Splitting Skill — Detailed Reference Guide
@@ -17,7 +26,9 @@ target_repositories: ["kicli-code-assist"]
 **Framework Integration:** `.github/skills/hybrid-doc-splitting/SKILL.md`  
 **Purpose:** Complete step-by-step guide (read in Typora)
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 This skill handles documents that mistakenly mix backend and frontend (usually TUI) concerns. The goal: separate concerns, maintain bidirectional links, keep both docs focused.
 
@@ -27,7 +38,9 @@ This skill handles documents that mistakenly mix backend and frontend (usually T
 - Backend and frontend implementation details are intertwined
 - One doc tries to serve two audiences (backend engineers + UI developers)
 
-## Process Steps
+<a id="process-steps"></a>
+
+## Process Steps [process-steps]
 
 ### 1. Identify Hybrid Content
 
@@ -196,7 +209,9 @@ relations:
 
 **This is the "halt and report" checkpoint.**
 
-## Checklist
+<a id="checklist"></a>
+
+## Checklist [checklist]
 
 - [ ] Read entire hybrid doc carefully
 - [ ] Identify backend vs. frontend sections
@@ -211,7 +226,9 @@ relations:
 - [ ] **Halt and report to user**
 - [ ] Only continue after user approval
 
-## Key Guidelines
+<a id="key-guidelines"></a>
+
+## Key Guidelines [key-guidelines]
 
 **Titles:**
 - Remove "PHASE_I2_1_" prefix
@@ -231,7 +248,9 @@ relations:
 - Backend: API contracts, security, performance, error handling
 - Frontend: UI workflows, widgets, rendering, user experience
 
-## Confidence & Limitations
+<a id="confidence--limitations"></a>
+
+## Confidence & Limitations [confidence-limitations]
 
 **High confidence:**
 - Identifying backend vs. TUI sections (clear separation)
@@ -248,13 +267,17 @@ relations:
 - Don't make assumptions about folder structure (verify it exists)
 - Don't apply this skill to ALL docs at once (one doc pair per session)
 
-## Related Patterns
+<a id="related-patterns"></a>
+
+## Related Patterns [related-patterns]
 
 - See: `AGENTIC_DOCUMENTATION_PATTERNS.md` (change proposals, metadata)
 - See: `SEMANTIC_KNOWLEDGE_ORGANIZATION.md` (YAML headers, relations format)
 - See: kicli-code-assist project READMEs for folder structure
 
-## Examples
+<a id="examples"></a>
+
+## Examples [examples]
 
 **Example 1: Backend API + TUI Consumer**
 - Original: `doc/backend/layer-2-workflow-orchestration/PHASE_I2_1_ENDPOINT_INTEGRATION.md`

@@ -1,14 +1,34 @@
+---
+project: dev_doc
+scope: guides
+purpose: Textual terminal UI architecture and implementation patterns
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- overview
+- architecture-component-design
+- common-patterns
+- resources
+- see-also
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Textual TUI Best Practices
 
 **Status:** Reference guide for Textual framework development  
 **Last Updated:** 2026-10-20  
 **Scope:** Cross-project reference - use with project-specific adaptations
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 Textual is a Python framework for building full-featured Terminal User Interfaces (TUIs). This guide documents best practices learned from production TUI development.
 
-## Architecture & Component Design
+<a id="architecture--component-design"></a>
+
+## Architecture & Component Design [architecture-component-design]
 
 ### 1. Widget Hierarchy & Composition
 
@@ -328,7 +348,9 @@ async def test_button_click():
 
 ---
 
-## Common Patterns
+<a id="common-patterns"></a>
+
+## Common Patterns [common-patterns]
 
 ### Loading State with Spinner
 
@@ -360,7 +382,9 @@ Textual provides `OptionList` for command palette pattern.
 
 ---
 
-## Resources
+<a id="resources"></a>
+
+## Resources [resources]
 
 - **Official:** https://textual.textualize.io
 - **API Reference:** https://textual.textualize.io/api
@@ -368,7 +392,9 @@ Textual provides `OptionList` for command palette pattern.
 
 ---
 
-## See Also
+<a id="see-also"></a>
+
+## See Also [see-also]
 
 - Project-specific implementations of these patterns (see your project docs)
 - Related: Web framework best practices in DOCUMENTATION_ORGANIZATION_GUIDE.md

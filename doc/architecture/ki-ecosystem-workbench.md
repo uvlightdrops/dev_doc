@@ -1,3 +1,25 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Proposal for shared text-workbench interfaces across different application stacks
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: draft
+semantic_blocks:
+- product-consistency
+- architecture-options
+- recommended-structure
+- package-extraction
+- assist-reuse
+- editor-comparison
+- persistent-text-anchors
+- ai-conversation-and-proposals
+- authentication-boundaries
+- reuse-order
+- official-sources
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # KI-Ökosystem: gemeinsame Textwerkstatt statt gemeinsames Monolith-Frontend
 
 **Status: Architekturentwurf zur Diskussion, nicht implementierter Standard.**
@@ -12,7 +34,9 @@ Alle Dokumente dieses Entwurfs sind Markdown. Der
 ist ebenfalls eine Markdown-Datei, kein Prototyp mit vorgetäuschter Speicherung.
 Die Links zu Projekten setzen das bekannte Nachbarverzeichnislayout voraus.
 
-## 1. Gemeinsames Produktgefühl verlangt keinen identischen Backend-Stack
+<a id="1-gemeinsames-produktgefühl-verlangt-keinen-identischen-backend-stack"></a>
+
+## 1. Gemeinsames Produktgefühl verlangt keinen identischen Backend-Stack [product-consistency]
 
 Ein Ökosystem kann einheitlich wirken, obwohl seine Anwendungen verschiedene
 Serverframeworks verwenden. Gemeinsam sein sollten zunächst:
@@ -29,7 +53,9 @@ ein Agentenauftrag ist keine redaktionelle Veröffentlichung.
 Die Ebene „gemeinsam“ sollte zuerst die Schnittstelle betreffen, nicht die
 Zusammenlegung aller Datenbanken und Server.
 
-## 2. Drei plausible Entwicklungswege
+<a id="2-drei-plausible-entwicklungswege"></a>
+
+## 2. Drei plausible Entwicklungswege [architecture-options]
 
 | Weg | Nutzen | Kosten / Grenze | Einschätzung |
 |---|---|---|---|
@@ -41,7 +67,9 @@ Eine komplette Backendmigration ist kein vierter notwendiger Schritt.
 Sie müsste unabhängig durch Wartungs- und Produktnutzen gerechtfertigt werden.
 Ebenso sind Federation/Microfrontends kein Selbstzweck für wenige Anwendungen.
 
-## 3. Empfohlene Struktur
+<a id="3-empfohlene-struktur"></a>
+
+## 3. Empfohlene Struktur [recommended-structure]
 
 ```text
                     Gemeinsame Bedien- und Datenverträge
@@ -67,7 +95,9 @@ Gemeinsames Starten/Stoppen durch stackctl ist davon unabhängig. Eine
 Editorbibliothek sollte keinen eigenen Prozessmanager oder Konfigurationsstack
 mitbringen.
 
-## 4. Mögliche Pakete, aber erst nach einer bewährten Schnittstelle
+<a id="4-mögliche-pakete-aber-erst-nach-einer-bewährten-schnittstelle"></a>
+
+## 4. Mögliche Pakete, aber erst nach einer bewährten Schnittstelle [package-extraction]
 
 Arbeitsnamen, ausdrücklich keine bereits beschlossenen neuen Repositories:
 
@@ -88,7 +118,9 @@ Kein Repository sollte auf einen willkürlichen privaten Quellpfad eines anderen
 zugreifen. Python- und npm-Paketierung bleiben ihren jeweiligen Werkzeugen
 überlassen; ein gemeinsames Namensschema macht sie nicht zu einem Paket.
 
-## 5. Was sich aus Assist wirklich wiederverwenden lässt
+<a id="5-was-sich-aus-assist-wirklich-wiederverwenden-lässt"></a>
+
+## 5. Was sich aus Assist wirklich wiederverwenden lässt [assist-reuse]
 
 Der untersuchte Assist-Editor arbeitet mit React, TypeScript, Vite und Monaco.
 Tabs und Diffansicht besitzen bereits gut erkennbare präsentationsnahe
@@ -123,7 +155,9 @@ widgetkit und widgetkit-django sind kein vorhandenes React-Designsystem.
 Ihre Registry-/Layout-/Hostadapter-Ideen können nützlich bleiben, ohne sie
 für diese Werkstatt durch eine völlig andere Bibliothek zu ersetzen.
 
-## 6. Editorvergleich und belastbare Grenzen
+<a id="6-editorvergleich-und-belastbare-grenzen"></a>
+
+## 6. Editorvergleich und belastbare Grenzen [editor-comparison]
 
 | Engine | Dokumentmodell | Eignung für den Start | Was zusätzlich gebaut werden muss |
 |---|---|---|---|
@@ -181,7 +215,9 @@ nicht vermessen. Vor Festlegung dieselben Zielgeräte, Dokumentgrößen und
 Screenreaderabläufe prüfen. „Modular“ ist kein gemessener Performancewert.
 Eigenes Hosting von Assets und gegebenenfalls Workern muss ohne CDN funktionieren.
 
-## 7. Dauerhafte Textanker gehören der Anwendung
+<a id="7-dauerhafte-textanker-gehören-der-anwendung"></a>
+
+## 7. Dauerhafte Textanker gehören der Anwendung [persistent-text-anchors]
 
 Keiner der verglichenen Editoren macht eine dekorierte Auswahl automatisch
 zu einem dauerhaft korrekt verknüpften Wissensobjekt.
@@ -213,7 +249,9 @@ zulässigen stillen „besten Treffer“. Historischen Bezug erhalten und neue
 Zuordnung prüfen lassen. Eine falsche dauerhafte Relation ist gefährlicher
 als eine sichtbar noch nicht zugeordnete Markierung.
 
-## 8. KI-Gespräch und Vorschläge als gemeinsame Mechanik
+<a id="8-ki-gespräch-und-vorschläge-als-gemeinsame-mechanik"></a>
+
+## 8. KI-Gespräch und Vorschläge als gemeinsame Mechanik [ai-conversation-and-proposals]
 
 Gemeinsame UI kann Kontextchips, Verlauf, Streamingzustand und Diff anzeigen.
 Der Host entscheidet, welche Inhalte gelesen werden dürfen und wie sie
@@ -230,7 +268,9 @@ Optimistische Nebenläufigkeit ist für den ersten Mehrbenutzerbetrieb ausreiche
 Echtzeit-Kollaboration verlangt später zusätzliche Rechte-, Schema-, Speicher-,
 Präsenz- und Wiederanlaufkonzepte.
 
-## 9. Authentifizierung: gemeinsame UI ist kein gemeinsames Vertrauen
+<a id="9-authentifizierung-gemeinsame-ui-ist-kein-gemeinsames-vertrauen"></a>
+
+## 9. Authentifizierung: gemeinsame UI ist kein gemeinsames Vertrauen [authentication-boundaries]
 
 Zuerst same-origin innerhalb jeder Anwendung bleiben. Ein geteiltes npm-Paket
 sollte keine globale Tokenablage, keinen Benutzer-Service und keine
@@ -245,7 +285,9 @@ Browserdirektzugriffe auf rohe Dateisystem- oder Agentenwerkzeuge sind keine
 neutrale Editor-API. Objektreferenzen, serverseitige erlaubte Aktionen und
 kontrollierte Adapter begrenzen die Oberfläche.
 
-## 10. Reihenfolge der Wiederverwendung
+<a id="10-reihenfolge-der-wiederverwendung"></a>
+
+## 10. Reihenfolge der Wiederverwendung [reuse-order]
 
 1. Eine vollständige manuelle Strecke im ersten Host liefern: Textstand,
    Markierung, Metadaten, Relation, Reload und Fehlerfälle.
@@ -260,7 +302,9 @@ Auswahlaktion. Kein Backendwechsel nur weil ein Frontend React verwendet.
 Ein gemeinsames Ökosystem wird durch klare Verträge größer, nicht durch
 maximale gegenseitige Abhängigkeit.
 
-## 11. Offizielle Quellen
+<a id="11-offizielle-quellen"></a>
+
+## 11. Offizielle Quellen [official-sources]
 
 Diese Quellen belegen Mechanismen und Lizenzgrenzen, nicht die erfolgreiche
 Integration in ein konkretes Projekt:

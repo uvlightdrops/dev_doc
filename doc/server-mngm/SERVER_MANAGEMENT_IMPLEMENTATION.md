@@ -1,6 +1,28 @@
+---
+project: dev_doc
+scope: guides
+purpose: Historical implementation proposal for server management
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- project-structure
+- phase-1-core-registry-week-1-days-1-3
+- phase-2-cli-commands-week-1-2-days-3-7
+- phase-3-optional-supervisor-week-2
+- phase-4-webui-integration-week-2-3
+- phase-5-multi-project-support-week-3-4
+- phase-6-testing-documentation-week-4
+- success-checklist
+- deployment-checklist
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Server Management System - Implementation Guide
 
-## Project Structure
+<a id="project-structure"></a>
+
+## Project Structure [project-structure]
 
 ```
 kicli-code-assist/
@@ -63,7 +85,9 @@ kicli-code-assist/
 
 ---
 
-## Phase 1: Core Registry (Week 1, Days 1-3)
+<a id="phase-1-core-registry-week-1-days-1-3"></a>
+
+## Phase 1: Core Registry (Week 1, Days 1-3) [phase-1-core-registry-week-1-days-1-3]
 
 ### 1.1 Create kicli_code_assist/server_management/registry.py
 
@@ -605,7 +629,9 @@ def test_concurrent_access(temp_registry):
 
 ---
 
-## Phase 2: CLI Commands (Week 1-2, Days 3-7)
+<a id="phase-2-cli-commands-week-1-2-days-3-7"></a>
+
+## Phase 2: CLI Commands (Week 1-2, Days 3-7) [phase-2-cli-commands-week-1-2-days-3-7]
 
 ### Tasks:
 - [ ] Implement full process lifecycle (spawn, monitor, kill)
@@ -629,7 +655,9 @@ kicli-assist server:stop kicli-backend
 
 ---
 
-## Phase 3: Optional Supervisor (Week 2, Days 8-10)
+<a id="phase-3-optional-supervisor-week-2-days-8-10"></a>
+
+## Phase 3: Optional Supervisor (Week 2, Days 8-10) [phase-3-optional-supervisor-week-2]
 
 ### Implementation:
 - Background health check loop (every 30 seconds)
@@ -686,7 +714,9 @@ class ServerSupervisor:
 
 ---
 
-## Phase 4: WebUI Integration (Week 2-3, Days 11-15)
+<a id="phase-4-webui-integration-week-2-3-days-11-15"></a>
+
+## Phase 4: WebUI Integration (Week 2-3, Days 11-15) [phase-4-webui-integration-week-2-3]
 
 ### Files to Create:
 
@@ -785,7 +815,9 @@ def handle_websocket():
 
 ---
 
-## Phase 5: Multi-Project Support (Week 3-4, Days 16-20)
+<a id="phase-5-multi-project-support-week-3-4-days-16-20"></a>
+
+## Phase 5: Multi-Project Support (Week 3-4, Days 16-20) [phase-5-multi-project-support-week-3-4]
 
 ### Configuration File: ~/.kicli/projects.yaml
 
@@ -833,7 +865,9 @@ kicli-assist server:start --all --exclude ki-knowledge  # Start all except ki-kn
 
 ---
 
-## Phase 6: Testing & Documentation (Week 4, Days 21-25)
+<a id="phase-6-testing--documentation-week-4-days-21-25"></a>
+
+## Phase 6: Testing & Documentation (Week 4, Days 21-25) [phase-6-testing-documentation-week-4]
 
 ### Test Coverage:
 
@@ -866,7 +900,9 @@ Total target: 85% coverage
 
 ---
 
-## Success Checklist
+<a id="success-checklist"></a>
+
+## Success Checklist [success-checklist]
 
 ### MVP (Week 1-2):
 
@@ -891,7 +927,9 @@ Total target: 85% coverage
 
 ---
 
-## Deployment Checklist
+<a id="deployment-checklist"></a>
+
+## Deployment Checklist [deployment-checklist]
 
 Before shipping to production:
 

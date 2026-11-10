@@ -3,19 +3,30 @@ title: TUI Development Strategy - Design Decision Documentation
 scope: cross_project
 project: kicli-code-assist
 status: active
-created: 2026-11-05T19:45+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-05 19
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 agent_project: kicli-code-assist
-cross_references: 
-  - kicli-code-assist/doc/specifications/02_TUI_SPECIFICATION.md
-  - kicli-code-assist/doc/guides/TUI_CLIENT_IMPLEMENTATION_PLAN.md
-  - /home/flow/dev_flow/kicli-code-assist/.copilot/session-state/*/checkpoints/008-tui-implementation-complete-co.md
+cross_references:
+- kicli-code-assist/doc/specifications/02_TUI_SPECIFICATION.md
+- kicli-code-assist/doc/guides/TUI_CLIENT_IMPLEMENTATION_PLAN.md
+- /home/flow/dev_flow/kicli-code-assist/.copilot/session-state/*/checkpoints/008-tui-implementation-complete-co.md
+purpose: Comparison of terminal and web frontend design approaches
+semantic_blocks:
+- problem-statement
+- current-implementation-status
+- design-decision-which-approach
+- recommendation
+- documentation-updates-needed
+- implementation-checklist
+- timeline
 ---
 
 # TUI Strategy Clarification: Two Design Approaches
 
-## Problem Statement
+<a id="problem-statement"></a>
+
+## Problem Statement [problem-statement]
 
 The kicli-code-assist project has **two conflicting TUI design specifications**:
 
@@ -31,7 +42,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
    - Focus on code analysis workflow (agent orchestration)
    - Uses ProjectExplorer, AgentOutputPanel, InputPanel widgets
 
-## Current Implementation Status
+<a id="current-implementation-status"></a>
+
+## Current Implementation Status [current-implementation-status]
 
 ### What Was Built (Nov 5, 2026)
 - **Implementation**: NEW SPEC approach (ProjectExplorer + AgentOutputPanel + InputPanel)
@@ -46,7 +59,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
 - File preview pane
 - Role-switching UI
 
-## Design Decision: Which Approach?
+<a id="design-decision-which-approach"></a>
+
+## Design Decision: Which Approach? [design-decision-which-approach]
 
 ### OLD SPEC: Interactive Chat Model
 **Pros:**
@@ -76,7 +91,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
 - Requires understanding of agent modes (Explain, Suggest, Reason, etc.)
 - No persistent chat history (stateless per request)
 
-## Recommendation
+<a id="recommendation"></a>
+
+## Recommendation [recommendation]
 
 **Use the NEW SPEC approach** (currently implemented) for these reasons:
 
@@ -86,7 +103,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
 4. **Phase Alignment**: Builds on completed Phase 5.5.2 (transparency & observability)
 5. **Timeline**: Already working, just needs polish and documentation updates
 
-## Documentation Updates Needed
+<a id="documentation-updates-needed"></a>
+
+## Documentation Updates Needed [documentation-updates-needed]
 
 ### 1. Archive OLD SPEC
 - Move `doc/specifications/02_TUI_SPECIFICATION.md` → `doc/specifications/archive/02_TUI_SPECIFICATION_LEGACY_2026.md`
@@ -117,7 +136,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
 - Link to architecture docs for implementations
 - Note which specs are active vs. archived
 
-## Implementation Checklist
+<a id="implementation-checklist"></a>
+
+## Implementation Checklist [implementation-checklist]
 
 ### Phase 4 Completion (This Session)
 - [ ] Commit TUI code (layouts, connectivity fix)
@@ -140,7 +161,9 @@ The kicli-code-assist project has **two conflicting TUI design specifications**:
 - [ ] Session persistence (optional, post-Phase 5)
 - [ ] Performance optimization (Tree rendering, streaming buffer size)
 
-## Timeline
+<a id="timeline"></a>
+
+## Timeline [timeline]
 
 - **Nov 5, 2026 - 19:53 MEZ**: This decision documented
 - **Nov 5, 2026 - 20:00 MEZ**: Documentation updates (1.5 hours)

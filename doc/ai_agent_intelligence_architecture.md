@@ -1,10 +1,27 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Conceptual model and implementation proposal for cognitive and generative agents
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: draft
+semantic_blocks:
+- agent-intelligence-levels
+- hybrid-layer-model
+- behavior-feedback-loop
+- implementation-roadmap
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Architektur-Konzept: Kognitive & Lernende Agenten-Architekturen
 
 Dieses Dokument beschreibt die theoretischen Grundlagen von Agenten-Intelligenzen in Simulationen, das Zusammenspiel klassischer Algorithmen mit modernen KI-Modellen (LLMs, neuronale Netze) und skizziert einen konkreten Umsetzungsplan für die IA3 SimWorld.
 
 ---
 
-## 1. Die Grade von Agenten-Intelligenz (Theoretische Einordnung)
+<a id="1-die-grade-von-agenten-intelligenz-theoretische-einordnung"></a>
+
+## 1. Die Grade von Agenten-Intelligenz (Theoretische Einordnung) [agent-intelligence-levels]
 
 In der KI- und Simulationsforschung werden Agenten anhand ihrer kognitiven Fähigkeiten in fünf Entwicklungsstufen eingeteilt:
 
@@ -31,7 +48,9 @@ Stufe 5: Autonom Lernend (Reinforcement Learning - RL)
 
 ---
 
-## 2. Das hybride Schichtenmodell (Kopplung von Simulation & KI)
+<a id="2-das-hybride-schichtenmodell-kopplung-von-simulation--ki"></a>
+
+## 2. Das hybride Schichtenmodell (Kopplung von Simulation & KI) [hybrid-layer-model]
 
 Ein reiner LLM-Betrieb für jeden einzelnen Bewegungsschritt bei Hunderten von Agenten ist aus Performance- und Latenzgründen unmöglich. Die Lösung ist eine **hybride, dreischichtige Architektur**:
 
@@ -57,7 +76,9 @@ Ein reiner LLM-Betrieb für jeden einzelnen Bewegungsschritt bei Hunderten von A
 
 ---
 
-## 3. Der Feedback-Loop (Vom Verhalten zurück ins Netz und den Code)
+<a id="3-der-feedback-loop-vom-verhalten-zurück-ins-netz-und-den-code"></a>
+
+## 3. Der Feedback-Loop (Vom Verhalten zurück ins Netz und den Code) [behavior-feedback-loop]
 
 Das ultimative Ziel ist eine adaptive Simulation, in der Agenten durch Interaktion lernen und dieses gelernte Verhalten in das System zurückfließt:
 
@@ -84,7 +105,9 @@ Das ultimative Ziel ist eine adaptive Simulation, in der Agenten durch Interakti
 
 ---
 
-## 4. Konkreter Fahrplan zur Umsetzung in IA3 SimWorld
+<a id="4-konkreter-fahrplan-zur-umsetzung-in-ia3-simworld"></a>
+
+## 4. Konkreter Fahrplan zur Umsetzung in IA3 SimWorld [implementation-roadmap]
 
 Hier ist ein pragmatischer 4-Stufen-Plan, um diese Intelligenzstufen schrittweise in unserer existierenden Architektur zu verankern:
 

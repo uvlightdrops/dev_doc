@@ -3,19 +3,38 @@ title: Service Orchestration Pattern (stackctl + Layer 1)
 project: Cross-Project
 scope: Architecture & Deployment Standards
 status: active
-created: 2026-11-05T23:15:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-05 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 agent_project: stackctl, kicli-code-assist, ki-knowledge
 cross_references:
-  - kicli-code-assist/doc/integration/OPTION_C_INTEGRATION_GUIDE.md
-  - ki-knowledge/config/defaults/stack.yaml
-  - server-mngm/SERVER_MANAGEMENT_README.md (historical, not implemented)
+- kicli-code-assist/doc/integration/OPTION_C_INTEGRATION_GUIDE.md
+- ki-knowledge/config/defaults/stack.yaml
+- server-mngm/SERVER_MANAGEMENT_README.md (historical, not implemented)
+purpose: Shared stackctl orchestration and optional supervision patterns
+semantic_blocks:
+- executive-summary
+- architecture
+- when-to-use-each-layer
+- layer-2-stackctl-full-stack
+- layer-1-optional-single-service
+- real-world-example-ki-knowledge
+- kicli-code-assist-recommended-approach
+- comparison-table-design-vs-reality
+- configuration-best-practices
+- troubleshooting
+- migration-path-old-system-stackctl
+- phased-implementation-plan
+- references
+- faq
+- document-maintenance
 ---
 
 # Service Orchestration Pattern: stackctl + Optional Layer 1 Supervision
 
-## Executive Summary
+<a id="executive-summary"></a>
+
+## Executive Summary [executive-summary]
 
 **Problem:** Projects manage service lifecycles inconsistently (ghost processes, no central visibility, manual coordination).
 
@@ -33,7 +52,9 @@ cross_references:
 
 ---
 
-## Architecture
+<a id="architecture"></a>
+
+## Architecture [architecture]
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -70,7 +91,9 @@ cross_references:
 
 ---
 
-## When to Use Each Layer
+<a id="when-to-use-each-layer"></a>
+
+## When to Use Each Layer [when-to-use-each-layer]
 
 ### Use stackctl (Layer 2) When:
 ✅ Starting entire application stack  
@@ -113,7 +136,9 @@ python -m uvicorn app:app --port 8000
 
 ---
 
-## Layer 2: stackctl Full-Stack Orchestration
+<a id="layer-2-stackctl-full-stack-orchestration"></a>
+
+## Layer 2: stackctl Full-Stack Orchestration [layer-2-stackctl-full-stack]
 
 ### Configuration (stack.yaml)
 
@@ -228,7 +253,9 @@ stackctl -t k8s start             # Deploy to production cluster
 
 ---
 
-## Layer 1: Optional Single-Service Supervision (Designed, Not Yet Implemented)
+<a id="layer-1-optional-single-service-supervision-designed-not-yet-implemented"></a>
+
+## Layer 1: Optional Single-Service Supervision (Designed, Not Yet Implemented) [layer-1-optional-single-service]
 
 ### When Implemented: Configuration (ki.yaml)
 
@@ -278,7 +305,9 @@ kicli-assist server start --watch --service backend
 
 ---
 
-## Real-World Example: ki-knowledge
+<a id="real-world-example-ki-knowledge"></a>
+
+## Real-World Example: ki-knowledge [real-world-example-ki-knowledge]
 
 ### Project Structure
 ```
@@ -355,7 +384,9 @@ stackctl logs -f api django
 
 ---
 
-## kicli-code-assist: Recommended Approach
+<a id="kicli-code-assist-recommended-approach"></a>
+
+## kicli-code-assist: Recommended Approach [kicli-code-assist-recommended-approach]
 
 ### Current State
 - ✅ Layer 2 (stackctl) designed in OPTION_C_INTEGRATION_GUIDE.md (not yet implemented)
@@ -396,7 +427,9 @@ stackctl logs -f              # Watch logs
 
 ---
 
-## Comparison Table: Design vs. Reality
+<a id="comparison-table-design-vs-reality"></a>
+
+## Comparison Table: Design vs. Reality [comparison-table-design-vs-reality]
 
 | Aspect | Original Plan (Oct 28) | ki-knowledge Reality | kicli-code-assist Plan |
 |--------|------|------|------|
@@ -426,7 +459,9 @@ stackctl logs -f              # Watch logs
 
 ---
 
-## Configuration Best Practices
+<a id="configuration-best-practices"></a>
+
+## Configuration Best Practices [configuration-best-practices]
 
 ### Best Practice 1: Use {host} and {port} Placeholders
 
@@ -559,7 +594,9 @@ stack:
 
 ---
 
-## Troubleshooting
+<a id="troubleshooting"></a>
+
+## Troubleshooting [troubleshooting]
 
 ### Q: I ran `stackctl start` but a service didn't start?
 
@@ -645,7 +682,9 @@ kicli-assist server restart --service backend  # Conflicts!
 
 ---
 
-## Migration Path: Old System → stackctl-Based
+<a id="migration-path-old-system--stackctl-based"></a>
+
+## Migration Path: Old System → stackctl-Based [migration-path-old-system-stackctl]
 
 ### Before (Manual or Makefile-Based)
 
@@ -682,7 +721,9 @@ stackctl stop            # Clean shutdown in reverse order
 
 ---
 
-## Phased Implementation Plan
+<a id="phased-implementation-plan"></a>
+
+## Phased Implementation Plan [phased-implementation-plan]
 
 ### Phase 1: Get stackctl Working (MVP)
 - [x] Understand stack.yaml structure
@@ -711,7 +752,9 @@ stackctl stop            # Clean shutdown in reverse order
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 **In this repository:**
 - `kicli-code-assist/doc/integration/OPTION_C_INTEGRATION_GUIDE.md` — Layer 1 + Layer 2 design
@@ -728,7 +771,9 @@ stackctl stop            # Clean shutdown in reverse order
 
 ---
 
-## FAQ
+<a id="faq"></a>
+
+## FAQ [faq]
 
 **Q: Do we need Layer 1 for kicli-code-assist?**
 
@@ -756,7 +801,9 @@ A: Use K8s target (`stackctl -t k8s start`). Builds Docker images locally, pushe
 
 ---
 
-## Document Maintenance
+<a id="document-maintenance"></a>
+
+## Document Maintenance [document-maintenance]
 
 **Status:** Active (Nov 5, 2026)  
 **Frequency:** Update if Layer 1 is implemented in kicli-code-assist, or if stackctl/ki-knowledge patterns change  

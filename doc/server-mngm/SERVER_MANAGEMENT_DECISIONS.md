@@ -1,6 +1,26 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Historical architectural decisions for the proposed server manager
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- answer-to-question-1-architecture
+- answer-to-question-2-state-storage
+- answer-to-question-3-scope-single-vs
+- answer-to-question-4-integration
+- answer-to-question-5-safety
+- summary-table-design-decisions
+- what-gets-built-first-priority-order
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Server Management System - Key Architectural Decisions
 
-## Answer to Question 1: Architecture Choice
+<a id="answer-to-question-1-architecture-choice"></a>
+
+## Answer to Question 1: Architecture Choice [answer-to-question-1-architecture]
 
 **SELECTED: Option C (Hybrid)**
 
@@ -46,7 +66,9 @@
 
 ---
 
-## Answer to Question 2: State Storage
+<a id="answer-to-question-2-state-storage"></a>
+
+## Answer to Question 2: State Storage [answer-to-question-2-state-storage]
 
 **SELECTED: Hybrid JSON File + Ephemeral OS State**
 
@@ -170,7 +192,9 @@ def release_lock():
 
 ---
 
-## Answer to Question 3: Scope (Single vs. Multi-Project)
+<a id="answer-to-question-3-scope-single-vs-multi-project"></a>
+
+## Answer to Question 3: Scope (Single vs. Multi-Project) [answer-to-question-3-scope-single-vs]
 
 **SELECTED: Multi-Project Support from Day 1**
 
@@ -265,7 +289,9 @@ kicli-assist server:stop --all              # Dangerous; requires --confirm
 
 ---
 
-## Answer to Question 4: Integration Points
+<a id="answer-to-question-4-integration-points"></a>
+
+## Answer to Question 4: Integration Points [answer-to-question-4-integration]
 
 **SELECTED: Layered Integration (Config System + Logging + Agent State)**
 
@@ -409,7 +435,9 @@ if intervention_action == "pause_agent":
 
 ---
 
-## Answer to Question 5: Safety & Accountability
+<a id="answer-to-question-5-safety--accountability"></a>
+
+## Answer to Question 5: Safety & Accountability [answer-to-question-5-safety]
 
 **SELECTED: Multi-Layer Protection + Audit Trail**
 
@@ -538,7 +566,9 @@ def stop_service(service_id):
 
 ---
 
-## Summary Table: Design Decisions
+<a id="summary-table-design-decisions"></a>
+
+## Summary Table: Design Decisions [summary-table-design-decisions]
 
 | Decision | Choice | Rationale |
 |----------|--------|-----------|
@@ -553,7 +583,9 @@ def stop_service(service_id):
 
 ---
 
-## What Gets Built First (Priority Order)
+<a id="what-gets-built-first-priority-order"></a>
+
+## What Gets Built First (Priority Order) [what-gets-built-first-priority-order]
 
 1. **Core Registry + CLI** (Week 1)
    - Solve the immediate pain: orphaned processes

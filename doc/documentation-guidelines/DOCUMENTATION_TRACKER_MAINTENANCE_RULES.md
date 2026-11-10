@@ -3,20 +3,34 @@ title: Documentation Tracker Maintenance Rules
 project: kicli-code-assist
 scope: Copilot Directive
 purpose: Rules for maintaining doc/DOCUMENTATION_MASTER_TRACKER.md in lean, actionable state
-created: 2026-11-07T18:54:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Relocate shared documentation into doc/ and update references"
+created: 2026-11-07 18
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 status: active
+agent_project: ki-ecosystem
+semantic_blocks:
+- purpose
+- what-goes-in-the-tracker
+- what-does-not-go-in-the-tracker
+- copilot-behavior-rules
+- update-pattern
+- maintenance-checklist
+- when-to-announce-pause-ask
+- cross-reference
 ---
 
 # Documentation Tracker Maintenance Rules
 
-## Purpose
+<a id="purpose"></a>
+
+## Purpose [purpose]
 Keep `doc/DOCUMENTATION_MASTER_TRACKER.md` lean, current, and immediately useful—**not** a general todo list or narrative document.
 
 ---
 
-## 🟢 What Goes IN the Tracker
+<a id="-what-goes-in-the-tracker"></a>
+
+## 🟢 What Goes IN the Tracker [what-goes-in-the-tracker]
 
 ### 1. Status Matrix (Folder × Skills)
 - Single table: all folders vs. all documentation skills
@@ -36,7 +50,9 @@ Keep `doc/DOCUMENTATION_MASTER_TRACKER.md` lean, current, and immediately useful
 
 ---
 
-## 🔴 What Does NOT Go IN the Tracker
+<a id="-what-does-not-go-in-the-tracker"></a>
+
+## 🔴 What Does NOT Go IN the Tracker [what-does-not-go-in-the-tracker]
 
 - ❌ Long prose sections ("Next Steps", "Phase I/II/III")
 - ❌ Detailed TODO lists
@@ -49,7 +65,9 @@ Keep `doc/DOCUMENTATION_MASTER_TRACKER.md` lean, current, and immediately useful
 
 ---
 
-## 🔵 Copilot Behavior Rules
+<a id="-copilot-behavior-rules"></a>
+
+## 🔵 Copilot Behavior Rules [copilot-behavior-rules]
 
 ### Rule 1: Announce Large Work First
 **Before writing or reorganizing prose in tracker:**
@@ -76,7 +94,9 @@ Keep `doc/DOCUMENTATION_MASTER_TRACKER.md` lean, current, and immediately useful
 
 ---
 
-## ✅ Update Pattern
+<a id="-update-pattern"></a>
+
+## ✅ Update Pattern [update-pattern]
 
 After every documentation change:
 
@@ -91,7 +111,9 @@ After every documentation change:
 
 ---
 
-## 📋 Maintenance Checklist
+<a id="-maintenance-checklist"></a>
+
+## 📋 Maintenance Checklist [maintenance-checklist]
 
 - [ ] Status matrix has one character per cell (✅ ⚠️ 🔶 ❌ ⏸️)
 - [ ] No folder detail table longer than 10 rows
@@ -102,7 +124,9 @@ After every documentation change:
 
 ---
 
-## When to Announce (Pause & Ask)
+<a id="when-to-announce-pause--ask"></a>
+
+## When to Announce (Pause & Ask) [when-to-announce-pause-ask]
 
 Ask user approval **before** doing any of these:
 - Adding a new section to tracker
@@ -113,7 +137,9 @@ Ask user approval **before** doing any of these:
 
 ---
 
-## Cross-Reference
+<a id="cross-reference"></a>
+
+## Cross-Reference [cross-reference]
 
 - **Main Tracker:** `doc/DOCUMENTATION_MASTER_TRACKER.md`
 - **Skills Reference:** `dev_doc/skills/documentation/`

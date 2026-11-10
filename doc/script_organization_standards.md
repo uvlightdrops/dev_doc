@@ -1,10 +1,27 @@
+---
+project: dev_doc
+scope: guides
+purpose: Shared organization of development and production scripts
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- core-philosophy
+- directory-structure
+- script-classes
+- ai-assisted-development
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Best Practice: Standardisierte Skript-Anordnung & Logik (Dev vs. Prod)
 
 Dieses Dokument beschreibt eine bewährte, moderne Architektur zur Organisation von Betriebs- und Entwicklungsskripten in Softwareprojekten. Diese Struktur ermöglicht eine nahtlose Koexistenz von direktem lokalem Betrieb (Non-Container/Non-K8s) und produktionsnahem Betrieb (Kubernetes/Minikube) bei maximalem Bedienkomfort.
 
 ---
 
-## 1. Die Kernphilosophie
+<a id="1-die-kernphilosophie"></a>
+
+## 1. Die Kernphilosophie [core-philosophy]
 
 Moderne Softwareprojekte erfordern oft zwei Arten der lokalen Ausführung:
 1. **Direct Local (Dev):** Ausführung direkt auf dem Host (z. B. via `go run`, `python main.py`, `npm run dev`) für schnelles Debugging und minimale Overhead-Zeiten.
@@ -17,7 +34,9 @@ Beide Welten teilen sich dieselben logischen Befehlsnamen, sind jedoch strikt in
 
 ---
 
-## 2. Strukturierte Verzeichnisübersicht
+<a id="2-strukturierte-verzeichnisübersicht"></a>
+
+## 2. Strukturierte Verzeichnisübersicht [directory-structure]
 
 ```text
 scripts/
@@ -41,7 +60,9 @@ scripts/
 
 ---
 
-## 3. Die Logik der Skript-Klassen
+<a id="3-die-logik-der-skript-klassen"></a>
+
+## 3. Die Logik der Skript-Klassen [script-classes]
 
 ### A. `start.sh` (Das Setup-Wunder)
 - **Dev-Logik:** Prüft, ob benötigte CLI-Compiler (Go, Node, Python) installiert sind. Sieht nach, ob Ports bereits belegt sind (um Abstürze zu verhindern). Startet Prozesse entkoppelt via `nohup` im Hintergrund und leitet Logs nach `.tmp/*.log` um. Verifiziert am Ende aktiv die Health-Endpunkte, bevor sie Erfolg meldet.
@@ -63,7 +84,9 @@ Ermöglicht schnelles Weiterentwickeln im K8s-Betrieb ohne kompletten Neustart. 
 
 ---
 
-## 4. Best Practices für KI-gestützte Entwicklung
+<a id="4-best-practices-für-ki-gestützte-entwicklung"></a>
+
+## 4. Best Practices für KI-gestützte Entwicklung [ai-assisted-development]
 
 Um dieses Skriptmodell mit KI-Unterstützung auf andere Projekte zu übertragen, gelten folgende Leitlinien:
 

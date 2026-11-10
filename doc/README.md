@@ -3,17 +3,21 @@ project: dev_doc
 agent_project: ki-ecosystem
 scope: navigation
 purpose: Knowledge-content hub and documentation source for Wissenswiki
-created: "2026-11-10 20"
-updated: "2026-11-10 20"
+created: 2026-11-10 20
+updated: 2026-11-10 23
 status: active
-semantic_blocks: [knowledge-folders, technical-guides, domain-boundary]
+semantic_blocks:
+- knowledge-folders
+- technical-guides
+- domain-boundary
 relations:
-  - target: ../README.md
-    type: parent
-    reason: Repository entry point and technical tooling
-  - target: INDEX.md
-    type: child
-    reason: Detailed topic and audience index
+- target: ../README.md
+  type: parent
+  reason: Repository entry point and technical tooling
+- target: INDEX.md
+  type: child
+  reason: Detailed topic and audience index
+update_reason: Validate YAML metadata and align semantic blocks with section headings
 ---
 
 # Shared knowledge

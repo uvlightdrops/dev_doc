@@ -1,3 +1,22 @@
+---
+project: dev_doc
+scope: guidelines
+purpose: Maps of documentation placement, navigation and archival conventions
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- overview-diagram
+- content-distribution
+- document-aging-archival-strategy
+- navigation-decision-tree
+- file-naming-conventions
+- cross-referencing-rules
+- maintenance-checklist-monthly
+- summary-table
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # 📐 Documentation Structure Map
 
 **Purpose**: Clear visual of what's where and why  
@@ -5,7 +24,9 @@
 
 ---
 
-## Overview Diagram
+<a id="overview-diagram"></a>
+
+## Overview Diagram [overview-diagram]
 
 ```
 User's Local Machine
@@ -65,7 +86,9 @@ User's Local Machine
 
 ---
 
-## Content Distribution
+<a id="content-distribution"></a>
+
+## Content Distribution [content-distribution]
 
 ### ~/dev_doc/ — What Goes Here?
 
@@ -136,7 +159,9 @@ User's Local Machine
 
 ---
 
-## Document Aging & Archival Strategy
+<a id="document-aging--archival-strategy"></a>
+
+## Document Aging & Archival Strategy [document-aging-archival-strategy]
 
 ```
 Timeline:
@@ -173,7 +198,9 @@ mv OLD_DOCUMENT.md _archive/OLD_DOCUMENT.md
 
 ---
 
-## Navigation Decision Tree
+<a id="navigation-decision-tree"></a>
+
+## Navigation Decision Tree [navigation-decision-tree]
 
 ```
 START: I have a question about...
@@ -213,7 +240,9 @@ START: I have a question about...
 
 ---
 
-## File Naming Conventions
+<a id="file-naming-conventions"></a>
+
+## File Naming Conventions [file-naming-conventions]
 
 ### ~/dev_doc/ Files
 - **Format**: `DESCRIPTIVE_TOPIC.md` or `topic_subtopic.md`
@@ -248,7 +277,9 @@ START: I have a question about...
 
 ---
 
-## Cross-Referencing Rules
+<a id="cross-referencing-rules"></a>
+
+## Cross-Referencing Rules [cross-referencing-rules]
 
 ### From ~/dev_flow/ to ~/dev_doc/
 ```markdown
@@ -272,7 +303,9 @@ Standard patterns: See /home/flow/dev_doc/doc/yaml_config_administration.md
 
 ---
 
-## Maintenance Checklist (Monthly)
+<a id="maintenance-checklist-monthly"></a>
+
+## Maintenance Checklist (Monthly) [maintenance-checklist-monthly]
 
 - [ ] Review README.md files (both ~/dev_doc/ and ~/dev_flow/)
 - [ ] Check for broken cross-links
@@ -283,7 +316,9 @@ Standard patterns: See /home/flow/dev_doc/doc/yaml_config_administration.md
 
 ---
 
-## Summary Table
+<a id="summary-table"></a>
+
+## Summary Table [summary-table]
 
 | Location | Purpose | Lifespan | Link To |
 |----------|---------|----------|---------|

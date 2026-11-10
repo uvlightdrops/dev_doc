@@ -1,3 +1,22 @@
+---
+project: dev_doc
+scope: guides
+purpose: Memory organization, context lookup and recurring maintenance checks
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- stored-memories-persistent-across
+- critical-files-frequently-referenced
+- topics-requiring-extra-care-easy-to
+- session-checkpoint-structure
+- knowledge-update-flow
+- most-critical-mistakes-self-reminder
+- quick-status-check-template
+- links-to-update-this-file
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Copilot Memory & Context Map
 
 **For:** Self-organization of memories, context persistence, and preventing knowledge loss  
@@ -5,7 +24,9 @@
 
 ---
 
-## 🧠 Stored Memories (Persistent Across Sessions)
+<a id="-stored-memories-persistent-across-sessions"></a>
+
+## 🧠 Stored Memories (Persistent Across Sessions) [stored-memories-persistent-across]
 
 ### User-Scoped Memories (@uvlightdrops) - Apply Across ALL Repos
 
@@ -37,7 +58,9 @@
 
 ---
 
-## 📂 Critical Files (Frequently Referenced)
+<a id="-critical-files-frequently-referenced"></a>
+
+## 📂 Critical Files (Frequently Referenced) [critical-files-frequently-referenced]
 
 ### Architecture & Design Docs
 ```
@@ -73,7 +96,9 @@
 
 ---
 
-## 🎯 Topics Requiring Extra Care (Easy to Forget/Get Wrong)
+<a id="-topics-requiring-extra-care-easy-to-forgetget-wrong"></a>
+
+## 🎯 Topics Requiring Extra Care (Easy to Forget/Get Wrong) [topics-requiring-extra-care-easy-to]
 
 ### 1. Logging Location & Relative Paths
 **Problem:** Logs are written via `flowpy.setup_logger()` with RELATIVE paths  
@@ -107,7 +132,9 @@
 
 ---
 
-## 📝 Session Checkpoint Structure
+<a id="-session-checkpoint-structure"></a>
+
+## 📝 Session Checkpoint Structure [session-checkpoint-structure]
 
 Location: `~/.copilot/session-state/1bb7e508-5834-4491-9930-99243671cb6c/`
 
@@ -128,7 +155,9 @@ files/              → Persistent artifacts (not committed)
 
 ---
 
-## 🔄 Knowledge Update Flow
+<a id="-knowledge-update-flow"></a>
+
+## 🔄 Knowledge Update Flow [knowledge-update-flow]
 
 ### When User Corrects Me (Common Scenario)
 1. **Acknowledge error** → Apologize, don't repeat mistake
@@ -146,7 +175,9 @@ files/              → Persistent artifacts (not committed)
 
 ---
 
-## 🚨 Most Critical Mistakes (Self-Reminder)
+<a id="-most-critical-mistakes-self-reminder"></a>
+
+## 🚨 Most Critical Mistakes (Self-Reminder) [most-critical-mistakes-self-reminder]
 
 ⚠️ **CRITICAL:** If app logs go to WRONG directory (e.g. `/dev_art/hdgui/log/`):
 - ❌ App is running from wrong pwd/context
@@ -178,7 +209,9 @@ files/              → Persistent artifacts (not committed)
 
 ---
 
-## 📊 Quick Status Check Template
+<a id="-quick-status-check-template"></a>
+
+## 📊 Quick Status Check Template [quick-status-check-template]
 
 Use this when resuming work to get oriented:
 
@@ -195,7 +228,9 @@ Deployable: [Can changes be deployed or testing needed?]
 
 ---
 
-## 🔗 Links to Update This File
+<a id="-links-to-update-this-file"></a>
+
+## 🔗 Links to Update This File [links-to-update-this-file]
 
 This file should be updated:
 - ✅ Weekly with new memory additions

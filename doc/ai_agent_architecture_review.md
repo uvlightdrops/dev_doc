@@ -2,7 +2,20 @@
 # NOTE: Moved from kicli-code-assist to ~/dev_doc
 # Original: kicli-code-assist/docs/architecture/AI_ARCHITECTURE_BEST_PRACTICES_REVIEW.md
 # This is generic - see project-specific implementations for adaptations
-update_reason: "Relocate shared documentation into doc/ and update references"
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+project: dev_doc
+scope: architecture
+purpose: Review of AI architecture, safety, providers and context patterns
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: draft
+semantic_blocks:
+- executive-summary
+- part-1-ai-architecture-overview
+- part-2-security-safety-patterns
+- part-3-llm-integration-provider
+- part-4-context-management
+updated: 2026-11-10 23
 ---
 
 # AI-Powered Application Architecture Review
@@ -12,7 +25,9 @@ update_reason: "Relocate shared documentation into doc/ and update references"
 
 ---
 
-## Executive Summary
+<a id="executive-summary"></a>
+
+## Executive Summary [executive-summary]
 
 kicli-code-assist exhibits **strong foundational AI architecture**:
 - ✅ **Excellent**: Security-first design with risk classification
@@ -25,7 +40,9 @@ kicli-code-assist exhibits **strong foundational AI architecture**:
 
 ---
 
-## Part 1: AI Architecture Overview
+<a id="part-1-ai-architecture-overview"></a>
+
+## Part 1: AI Architecture Overview [part-1-ai-architecture-overview]
 
 ### 1.1 System Design
 ```
@@ -88,7 +105,9 @@ kicli-code-assist exhibits **strong foundational AI architecture**:
 
 ---
 
-## Part 2: Security & Safety Patterns
+<a id="part-2-security--safety-patterns"></a>
+
+## Part 2: Security & Safety Patterns [part-2-security-safety-patterns]
 
 ### 2.1 Risk Classification ✅ EXCELLENT
 
@@ -222,7 +241,9 @@ class ExecutionAuditRecord:
 
 ---
 
-## Part 3: LLM Integration & Provider Pattern
+<a id="part-3-llm-integration--provider-pattern"></a>
+
+## Part 3: LLM Integration & Provider Pattern [part-3-llm-integration-provider]
 
 ### 3.1 Provider Abstraction ✅ GOOD
 
@@ -324,7 +345,9 @@ class TokenBudget:
 
 ---
 
-## Part 4: Context Management
+<a id="part-4-context-management"></a>
+
+## Part 4: Context Management [part-4-context-management]
 
 ### 4.1 Project Context Synthesis ✅ GOOD
 

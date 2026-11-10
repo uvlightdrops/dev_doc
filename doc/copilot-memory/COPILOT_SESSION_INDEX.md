@@ -1,3 +1,25 @@
+---
+project: dev_doc
+scope: tracking
+purpose: Historical snapshot of Copilot session work and project references
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- critical-status-right-now
+- critical-documentation-always-up-to
+- stored-memories-user-repository-scoped
+- current-session-work
+- key-technical-details
+- deployment-notes
+- repository-structure
+- quick-reference-most-common-issues
+- phase-status
+- session-checkpoints
+- maintenance-checklist
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Copilot Session Index
 
 **Purpose:** Central entry point for all active development work, memories, and critical information. Maintained continuously and linked from all sessions.
@@ -8,7 +30,9 @@
 
 ---
 
-## 🔴 CRITICAL STATUS - RIGHT NOW
+<a id="-critical-status---right-now"></a>
+
+## 🔴 CRITICAL STATUS - RIGHT NOW [critical-status-right-now]
 
 - **LLM Chat Messages**: NOT sending loaded files to LLM (BLOCKED - investigating logging)
 - **Log Files Location**: kicli-code-assist logs → `/home/flow/dev_flow/kicli-code-assist/log/` (not configurable)
@@ -17,7 +41,9 @@
 
 ---
 
-## 📚 Critical Documentation (Always Up-to-Date)
+<a id="-critical-documentation-always-up-to-date"></a>
+
+## 📚 Critical Documentation (Always Up-to-Date) [critical-documentation-always-up-to]
 
 ### Architecture & Design
 - **[CLI Architecture Roadmap](../cli-management/archive/CLI_ARCHITECTURE_ROADMAP.md)** - All app CLIs delegate to ki-core base commands
@@ -32,7 +58,9 @@
 
 ---
 
-## 🧠 Stored Memories (User & Repository Scoped)
+<a id="-stored-memories-user--repository-scoped"></a>
+
+## 🧠 Stored Memories (User & Repository Scoped) [stored-memories-user-repository-scoped]
 
 ### Repository Memories (kicli-code-assist)
 1. **Deployment documentation** - Outdated references (make prod-update no longer exists)
@@ -51,7 +79,9 @@
 
 ---
 
-## 📋 Current Session Work
+<a id="-current-session-work"></a>
+
+## 📋 Current Session Work [current-session-work]
 
 ### Active Tasks
 - [ ] **FIX BLOCKER**: Chat messages + loaded files not reaching LLM
@@ -69,7 +99,9 @@
 
 ---
 
-## 🔧 Key Technical Details
+<a id="-key-technical-details"></a>
+
+## 🔧 Key Technical Details [key-technical-details]
 
 ### Logging (CRITICAL - Easy to Get Wrong)
 ```
@@ -113,7 +145,9 @@ When submitting chat:
 
 ---
 
-## 🚀 Deployment Notes
+<a id="-deployment-notes"></a>
+
+## 🚀 Deployment Notes [deployment-notes]
 
 ### Current Setup (No Makefile)
 - Target hosts: 2 dev machines + staging (HTTPS clones, no Docker)
@@ -128,7 +162,9 @@ When submitting chat:
 
 ---
 
-## 📁 Repository Structure
+<a id="-repository-structure"></a>
+
+## 📁 Repository Structure [repository-structure]
 
 ```
 ~/dev_flow/
@@ -150,7 +186,9 @@ When submitting chat:
 
 ---
 
-## 📞 Quick Reference - Most Common Issues
+<a id="-quick-reference---most-common-issues"></a>
+
+## 📞 Quick Reference - Most Common Issues [quick-reference-most-common-issues]
 
 | Issue | Solution | File/Location |
 |-------|----------|---------------|
@@ -162,7 +200,9 @@ When submitting chat:
 
 ---
 
-## 📊 Phase Status
+<a id="-phase-status"></a>
+
+## 📊 Phase Status [phase-status]
 
 - **Phase 2**: ✅ Config system unified in ki-core
 - **Phase 3**: ✅ Error handling + validation complete (11/14 config tests pass)
@@ -171,7 +211,9 @@ When submitting chat:
 
 ---
 
-## 🔗 Session Checkpoints
+<a id="-session-checkpoints"></a>
+
+## 🔗 Session Checkpoints [session-checkpoints]
 
 For detailed history of what happened before this session, see:
 - `./checkpoints/027-chat-message-submission-fix-wi.md` - Most recent
@@ -182,7 +224,9 @@ Run `/read checkpoints/XXX-title.md` to see full context.
 
 ---
 
-## ✅ Maintenance Checklist
+<a id="-maintenance-checklist"></a>
+
+## ✅ Maintenance Checklist [maintenance-checklist]
 
 - [ ] Update this file weekly with latest memory additions
 - [ ] Link new critical docs here (architecture, guides, tracking)

@@ -1,3 +1,24 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Historical roadmap for shared hierarchical CLI commands
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- problem
+- vision-hierarchical-clis
+- phase-1-centralize-doctor-complete
+- phase-2-centralize-config-profile
+- phase-3-single-ki-cli-with-app
+- implementation-guidelines
+- next-steps
+- checklist-adding-new-shared-command
+- references
+- dependency-architecture
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # CLI Architecture Roadmap
 
 **Status:** Phase 2 (🔄 In Progress)  
@@ -5,7 +26,9 @@
 
 ---
 
-## Problem
+<a id="problem"></a>
+
+## Problem [problem]
 
 Current state (chaos):
 ```
@@ -25,7 +48,9 @@ ia3simworld (?)           → Go services + launcher
 
 ---
 
-## Vision: Hierarchical CLIs
+<a id="vision-hierarchical-clis"></a>
+
+## Vision: Hierarchical CLIs [vision-hierarchical-clis]
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -56,7 +81,9 @@ Each app:
 
 ---
 
-## Phase 1: Centralize "doctor" (✅ COMPLETE)
+<a id="phase-1-centralize-doctor--complete"></a>
+
+## Phase 1: Centralize "doctor" (✅ COMPLETE) [phase-1-centralize-doctor-complete]
 
 **Done:**
 - ✅ `ki_core/commands/doctor.py` - shared base implementation
@@ -74,7 +101,9 @@ kicli-assist doctor
 
 ---
 
-## Phase 2: Centralize config/profile/stage (🔄 IN PROGRESS)
+<a id="phase-2-centralize-configprofilestage--in-progress"></a>
+
+## Phase 2: Centralize config/profile/stage (🔄 IN PROGRESS) [phase-2-centralize-config-profile]
 
 Move from `yaml-cfg config resolve ...` to:
 ```bash
@@ -122,7 +151,9 @@ kicli-assist stage set dev           # Stage management
 
 ---
 
-## Phase 3: Single "ki" CLI with app namespaces (Future)
+<a id="phase-3-single-ki-cli-with-app-namespaces-future"></a>
+
+## Phase 3: Single "ki" CLI with app namespaces (Future) [phase-3-single-ki-cli-with-app]
 
 Optional long-term unification:
 ```bash
@@ -138,7 +169,9 @@ ki knowledge config ...   # Equivalent to future ki-knowledge tool
 
 ---
 
-## Implementation Guidelines
+<a id="implementation-guidelines"></a>
+
+## Implementation Guidelines [implementation-guidelines]
 
 ### For new commands in ki-core:
 
@@ -175,7 +208,9 @@ NEVER: ki-core/commands → app code
 
 ---
 
-## Next Steps
+<a id="next-steps"></a>
+
+## Next Steps [next-steps]
 
 1. **Phase 2a (next):** Create `ki_core/commands/config.py` with resolve/verify/skeleton
 2. **Phase 2b:** Update `yaml-cfg` to use it (or make yaml-cfg a wrapper)
@@ -184,7 +219,9 @@ NEVER: ki-core/commands → app code
 
 ---
 
-## Checklist: Adding New Shared Command
+<a id="checklist-adding-new-shared-command"></a>
+
+## Checklist: Adding New Shared Command [checklist-adding-new-shared-command]
 
 - [ ] Create `ki_core/commands/my_cmd.py` with `run_my_cmd(echo_fn=print, ...)`
 - [ ] Export from `ki_core/commands/__init__.py`
@@ -195,13 +232,17 @@ NEVER: ki-core/commands → app code
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 - YAML_CONFIG_SYSADMIN.md - Config resolution order  
 - ki_core/commands/ - Shared implementations
 - Each app's cli.py - Delegation patterns
 
-## Dependency Architecture
+<a id="dependency-architecture"></a>
+
+## Dependency Architecture [dependency-architecture]
 
 ```
 yaml-cfg (independent generic YAML tool)

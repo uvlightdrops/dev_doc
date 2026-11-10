@@ -1,17 +1,32 @@
 ---
-title: "Documentation Maintenance Standards"
-project: "KI-Ecosystem"
-scope: "Cross-project guidelines"
-created: 2026-11-01T23:58:00+01:00
-updated: "2026-11-10 20"
-update_reason: "Update shared-documentation paths after relocation"
-status: "active"
-author: "Copilot"
+title: Documentation Maintenance Standards
+project: KI-Ecosystem
+scope: Cross-project guidelines
+created: 2026-11-01 23
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+status: active
+author: Copilot
+purpose: Metadata, structure and maintenance rules for shared documentation
+agent_project: ki-ecosystem
+semantic_blocks:
+- executive-summary
+- yaml-header-standard
+- inhalt-struktur
+- projekt-uebergreifende-doku
+- update-workflow
+- audit-kriterien-fuer-code-review
+- current-docs-audit
+- tools-automation
+- adoption-timeline
+- references
 ---
 
 # Documentation Maintenance Standards
 
-## Executive Summary
+<a id="executive-summary"></a>
+
+## Executive Summary [executive-summary]
 
 Dokumentation ist Code und muss wie Code gepflegt werden. Dieses Dokument definiert Standards für:
 - **YAML-Header** (Metadaten für Maschinen)
@@ -21,7 +36,9 @@ Dokumentation ist Code und muss wie Code gepflegt werden. Dieses Dokument defini
 
 ---
 
-## 1. YAML-Header Standard
+<a id="1-yaml-header-standard"></a>
+
+## 1. YAML-Header Standard [yaml-header-standard]
 
 **ALLE .md Dateien MÜSSEN mit YAML-Header starten:**
 
@@ -58,7 +75,9 @@ agent_project: "kicli-code-assist"
 
 ---
 
-## 2. Inhalt-Struktur
+<a id="2-inhalt-struktur"></a>
+
+## 2. Inhalt-Struktur [inhalt-struktur]
 
 ### Klarheit: Aktuell vs. Vision vs. Problem
 
@@ -113,7 +132,9 @@ updated: 2026-11-01T23:58:00+01:00
 
 ---
 
-## 3. Projekt-übergreifende Doku
+<a id="3-projekt-übergreifende-doku"></a>
+
+## 3. Projekt-übergreifende Doku [projekt-uebergreifende-doku]
 
 ### Dezentralisierung: Was wohin?
 
@@ -155,7 +176,9 @@ See detailed implementations:
 
 ---
 
-## 4. Update Workflow
+<a id="4-update-workflow"></a>
+
+## 4. Update Workflow [update-workflow]
 
 ### Wenn du eine Doku anfasst:
 
@@ -178,7 +201,9 @@ git commit -m "docs: add blocking issues in TRACKING doc"
 
 ---
 
-## 5. Audit-Kriterien (für Code Review)
+<a id="5-audit-kriterien-für-code-review"></a>
+
+## 5. Audit-Kriterien (für Code Review) [audit-kriterien-fuer-code-review]
 
 Bevor Dokumentation merged wird, checken:
 
@@ -193,7 +218,9 @@ Bevor Dokumentation merged wird, checken:
 
 ---
 
-## 6. Current Docs Audit
+<a id="6-current-docs-audit"></a>
+
+## 6. Current Docs Audit [current-docs-audit]
 
 ### Status: `kicli-code-assist/doc/`
 
@@ -213,7 +240,9 @@ Bevor Dokumentation merged wird, checken:
 
 ---
 
-## 7. Tools & Automation
+<a id="7-tools--automation"></a>
+
+## 7. Tools & Automation [tools-automation]
 
 ### Script: Validate Markdown Headers
 
@@ -246,7 +275,9 @@ for root, dirs, files in os.walk('.'):
 
 ---
 
-## 8. Adoption Timeline
+<a id="8-adoption-timeline"></a>
+
+## 8. Adoption Timeline [adoption-timeline]
 
 | Phase | Aktion | Target | Deadline |
 |-------|--------|--------|----------|
@@ -258,7 +289,9 @@ for root, dirs, files in os.walk('.'):
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 - [Documentation Organization Guide](/home/flow/dev_doc/doc/documentation-guidelines/DOCUMENTATION_ORGANIZATION_GUIDE.md)
 - [Script Organization Standards](../script_organization_standards.md)

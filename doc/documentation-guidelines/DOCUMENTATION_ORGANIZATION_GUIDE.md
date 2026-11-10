@@ -1,3 +1,24 @@
+---
+project: dev_doc
+scope: guidelines
+purpose: Placement and organization of shared and project-specific documentation
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: active
+semantic_blocks:
+- overview
+- documentation-location-strategy
+- document-categorization-within
+- splitting-generic-vs-project-specific
+- extraction-examples
+- admin-friendly-quick-start-extraction
+- cross-project-duplicates-strategy
+- file-naming-conventions
+- cross-references-format
+- quick-reference-where-does-this-doc-go
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Documentation Organization Guide
 
 **Status:** Active Standard  
@@ -7,7 +28,9 @@
 
 ---
 
-## Overview
+<a id="overview"></a>
+
+## Overview [overview]
 
 This guide provides a framework for organizing documentation across the KI Ecosystem projects in ~/dev_flow. The goal is to:
 
@@ -18,7 +41,9 @@ This guide provides a framework for organizing documentation across the KI Ecosy
 
 ---
 
-## 1. Documentation Location Strategy
+<a id="1-documentation-location-strategy"></a>
+
+## 1. Documentation Location Strategy [documentation-location-strategy]
 
 ### ~/dev_doc/doc (Shared, Cross-Project)
 
@@ -61,7 +86,9 @@ documentation source. Keep `agent-instructions/`, `skills/`, `scripts/` and
 
 ---
 
-## 2. Document Categorization Within Projects
+<a id="2-document-categorization-within-projects"></a>
+
+## 2. Document Categorization Within Projects [document-categorization-within]
 
 ### Each project's docs/ should have subfolders:
 
@@ -99,7 +126,9 @@ documentation source. Keep `agent-instructions/`, `skills/`, `scripts/` and
 
 ---
 
-## 3. Splitting Generic vs. Project-Specific Content
+<a id="3-splitting-generic-vs-project-specific-content"></a>
+
+## 3. Splitting Generic vs. Project-Specific Content [splitting-generic-vs-project-specific]
 
 ### Pattern: Best Practices Document
 
@@ -173,7 +202,9 @@ For troubleshooting, see DEPLOYMENT_REFERENCE.md
 
 ---
 
-## 4. Extraction Examples
+<a id="4-extraction-examples"></a>
+
+## 4. Extraction Examples [extraction-examples]
 
 ### Example 1: AI_ARCHITECTURE_BEST_PRACTICES_REVIEW.md
 
@@ -238,7 +269,9 @@ For troubleshooting, see DEPLOYMENT_REFERENCE.md
 
 ---
 
-## 5. Admin-Friendly Quick Start Extraction
+<a id="5-admin-friendly-quick-start-extraction"></a>
+
+## 5. Admin-Friendly Quick Start Extraction [admin-friendly-quick-start-extraction]
 
 ### Pattern: Separate complexity levels
 
@@ -283,7 +316,9 @@ make dev-setup && make dev-up
 
 ---
 
-## 6. Cross-Project Duplicates: Strategy
+<a id="6-cross-project-duplicates-strategy"></a>
+
+## 6. Cross-Project Duplicates: Strategy [cross-project-duplicates-strategy]
 
 ### When you find the same doc in multiple projects:
 
@@ -318,7 +353,9 @@ For general ecosystem info, see ~/dev_doc/doc/GETTING_STARTED_ECOSYSTEM.md
 
 ---
 
-## 7. File Naming Conventions
+<a id="7-file-naming-conventions"></a>
+
+## 7. File Naming Conventions [file-naming-conventions]
 
 **Generic (~/dev_doc):**
 - `BEST_PRACTICES_*.md` - Reusable patterns
@@ -339,7 +376,9 @@ For general ecosystem info, see ~/dev_doc/doc/GETTING_STARTED_ECOSYSTEM.md
 
 ---
 
-## 8. Cross-References Format
+<a id="8-cross-references-format"></a>
+
+## 8. Cross-References Format [cross-references-format]
 
 **Link to ~/dev_doc from project:**
 ```markdown
@@ -355,7 +394,9 @@ See kicli-code-assist/docs/architecture/AI_INTEGRATION.md for a reference implem
 
 ---
 
-## 9. Quick Reference: Where Does This Doc Go?
+<a id="9-quick-reference-where-does-this-doc-go"></a>
+
+## 9. Quick Reference: Where Does This Doc Go? [quick-reference-where-does-this-doc-go]
 
 ```
 Is it reusable across multiple projects?

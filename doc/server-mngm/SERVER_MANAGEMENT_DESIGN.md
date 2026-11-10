@@ -1,3 +1,28 @@
+---
+project: dev_doc
+scope: architecture
+purpose: Historical design proposal for unified server management
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- executive-summary
+- problem-analysis
+- architecture-options
+- recommended-architecture-option-c
+- cli-interface
+- webui-integration
+- implementation-roadmap
+- api-reference
+- data-flow-examples
+- state-persistence-recovery
+- risk-assessment-mitigations
+- configuration-format
+- success-criteria
+- long-term-vision
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # Unified Server Management System - Design Document
 
 **Version:** 1.0  
@@ -7,7 +32,9 @@
 
 ---
 
-## Executive Summary
+<a id="executive-summary"></a>
+
+## Executive Summary [executive-summary]
 
 Current pain point: Multiple backend/frontend processes run concurrently with no central visibility or control, leading to ghost processes, manual PID killing, and no unified logging.
 
@@ -22,7 +49,9 @@ This document presents three architectural options and recommends **Option C (Hy
 
 ---
 
-## 1. Problem Analysis
+<a id="1-problem-analysis"></a>
+
+## 1. Problem Analysis [problem-analysis]
 
 ### Current State
 ```
@@ -54,7 +83,9 @@ stackctl:
 
 ---
 
-## 2. Architecture Options
+<a id="2-architecture-options"></a>
+
+## 2. Architecture Options [architecture-options]
 
 ### Option A: Daemon-Based (Supervisor Process)
 
@@ -170,7 +201,9 @@ stackctl:
 
 ---
 
-## 3. Recommended Architecture (Option C)
+<a id="3-recommended-architecture-option-c"></a>
+
+## 3. Recommended Architecture (Option C) [recommended-architecture-option-c]
 
 ### 3.1 Data Model: Service Registry
 
@@ -297,7 +330,9 @@ class ServerRegistry:
 
 ---
 
-## 4. CLI Interface
+<a id="4-cli-interface"></a>
+
+## 4. CLI Interface [cli-interface]
 
 **Command structure:** `kicli-assist server:<action> [service-id] [options]`
 
@@ -327,7 +362,9 @@ kicli-assist server:supervisor:status      # Check if running
 
 ---
 
-## 5. WebUI Integration
+<a id="5-webui-integration"></a>
+
+## 5. WebUI Integration [webui-integration]
 
 ### Dashboard Location
 **New React page:** `web/frontend/src/pages/ServerDashboard.tsx`
@@ -367,7 +404,9 @@ kicli-assist server:supervisor:status      # Check if running
 
 ---
 
-## 6. Implementation Roadmap
+<a id="6-implementation-roadmap"></a>
+
+## 6. Implementation Roadmap [implementation-roadmap]
 
 ### Phase 1: Core Infrastructure (Week 1)
 - [x] Design service registry schema
@@ -407,7 +446,9 @@ kicli-assist server:supervisor:status      # Check if running
 
 ---
 
-## 7. API Reference
+<a id="7-api-reference"></a>
+
+## 7. API Reference [api-reference]
 
 ### REST Endpoints (Flask Backend)
 
@@ -434,7 +475,9 @@ GET    /api/audit-log                   Fetch audit trail
 
 ---
 
-## 8. Data Flow Examples
+<a id="8-data-flow-examples"></a>
+
+## 8. Data Flow Examples [data-flow-examples]
 
 ### Starting a Service with Dependencies
 
@@ -497,7 +540,9 @@ Error: "Port 8000 already in use by process 999 (/usr/bin/other-app)"
 
 ---
 
-## 9. State Persistence & Recovery
+<a id="9-state-persistence--recovery"></a>
+
+## 9. State Persistence & Recovery [state-persistence-recovery]
 
 ### Lock Mechanism
 
@@ -530,7 +575,9 @@ If supervisor crashes:
 
 ---
 
-## 10. Risk Assessment & Mitigations
+<a id="10-risk-assessment--mitigations"></a>
+
+## 10. Risk Assessment & Mitigations [risk-assessment-mitigations]
 
 | Risk | Severity | Mitigation |
 |------|----------|-----------|
@@ -544,7 +591,9 @@ If supervisor crashes:
 
 ---
 
-## 11. Configuration Format
+<a id="11-configuration-format"></a>
+
+## 11. Configuration Format [configuration-format]
 
 **File:** `~/.kicli/projects.yaml` (defines service inventory)
 
@@ -592,7 +641,9 @@ projects:
 
 ---
 
-## 12. Success Criteria
+<a id="12-success-criteria"></a>
+
+## 12. Success Criteria [success-criteria]
 
 ✅ **MVP (Week 1-2):**
 - [x] Registry file persists service state
@@ -609,7 +660,9 @@ projects:
 
 ---
 
-## 13. Long-Term Vision
+<a id="13-long-term-vision"></a>
+
+## 13. Long-Term Vision [long-term-vision]
 
 1. **Container Support**: Extend to Docker/Kubernetes (read container status)
 2. **Cloud Deployment**: Sync registry to cloud for remote access

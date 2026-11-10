@@ -1,10 +1,30 @@
+---
+project: dev_doc
+scope: tracking
+purpose: Historical CLI architecture status and implementation checklist
+created: 2026-11-05 11
+agent_project: ki-ecosystem
+status: archived
+semantic_blocks:
+- current-architecture-state
+- what-to-do-in-each-project
+- implementation-checklist
+- testing-phase-2
+- known-limitations-assumptions
+- references
+- questions-issues
+updated: 2026-11-10 23
+update_reason: Validate YAML metadata and align semantic blocks with section headings
+---
 # CLI Architecture - Implementation Status & Next Steps
 
 **Last Updated:** Phase 2 (In Progress)
 
 ---
 
-## Current Architecture State
+<a id="current-architecture-state"></a>
+
+## Current Architecture State [current-architecture-state]
 
 The KI ecosystem is transitioning from isolated CLI implementations to a shared base architecture:
 
@@ -22,7 +42,9 @@ Consuming Apps:
 
 ---
 
-## What to Do in Each Project
+<a id="what-to-do-in-each-project"></a>
+
+## What to Do in Each Project [what-to-do-in-each-project]
 
 ### kicli-code-assist ✅ DONE
 
@@ -118,7 +140,9 @@ ki-knowledge profile list           # (delegate to ki-core)
 
 ---
 
-## Implementation Checklist
+<a id="implementation-checklist"></a>
+
+## Implementation Checklist [implementation-checklist]
 
 ### For Apps Adopting Phase 2
 
@@ -141,7 +165,9 @@ ki-knowledge profile list           # (delegate to ki-core)
 
 ---
 
-## Testing Phase 2
+<a id="testing-phase-2"></a>
+
+## Testing Phase 2 [testing-phase-2]
 
 ```bash
 # Test ki-core base CLI
@@ -163,7 +189,9 @@ ki-chat doctor
 
 ---
 
-## Known Limitations / Assumptions
+<a id="known-limitations--assumptions"></a>
+
+## Known Limitations / Assumptions [known-limitations-assumptions]
 
 1. **Profile/Stage markers:** Currently use `.active_profile` and `.active_stage` files
    - These are text files in `config/profiles/` and `config/stages/` dirs
@@ -183,7 +211,9 @@ ki-chat doctor
 
 ---
 
-## References
+<a id="references"></a>
+
+## References [references]
 
 - **CLI_ARCHITECTURE_ROADMAP.md** - This directory, full technical roadmap
 - **YAML_CONFIG_SYSADMIN.md** - This directory, config resolution details
@@ -192,7 +222,9 @@ ki-chat doctor
 
 ---
 
-## Questions / Issues?
+<a id="questions--issues"></a>
+
+## Questions / Issues? [questions-issues]
 
 When in doubt:
 1. Check if it's a shared config command → should live in ki_core.commands
