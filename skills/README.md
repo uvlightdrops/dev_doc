@@ -18,9 +18,9 @@ skills/
 │   ├── folder-structure-audit/
 │   └── documentation-coherence-check/
 │
-├── code-quality/          # Code style, naming, quality standards (TBD)
-├── testing/               # Testing patterns & strategies (TBD)
-└── git-workflow/          # Git & version control standards (TBD)
+├── code-quality/          # Code style, API design and agent resilience
+├── testing/               # Testing patterns & strategies
+└── git-workflow/          # Git & version control standards
 ```
 
 ## Using Skills in Your Project
@@ -86,7 +86,7 @@ also makes the intended workflow clear; invocation syntax depends on the client.
 | folder-structure-audit | Find gaps & misplaced files |
 | documentation-coherence-check | Verify no contradictions |
 
-### Code Quality Skills (3 skills)
+### Code Quality Skills (6 skills)
 **Applicable to:** All projects
 
 | Skill | Purpose |
@@ -94,6 +94,9 @@ also makes the intended workflow clear; invocation syntax depends on the client.
 | python-style-guide | PEP 8 conventions & project standards |
 | design-patterns | Factory, Strategy, Observer, Builder, Adapter |
 | error-handling | Custom exceptions, recovery hints, logging |
+| api-design-async | REST, WebSocket streaming and resource cleanup |
+| design-patterns-autonomy | Agent orchestration and lifecycle patterns |
+| error-handling-layer3 | Agent failure recovery, circuit breakers and tracing |
 
 ### Testing Skills (3 skills)
 **Applicable to:** All projects
