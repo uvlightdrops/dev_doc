@@ -78,7 +78,7 @@ The skill involves these core steps:
 ## Detailed Process
 
 For step-by-step instructions, see the full guide at:
-`dev_doc/documentation-guidelines/HYBRID_DOCUMENT_SPLITTING_SKILL.md`
+`dev_doc/doc/documentation-guidelines/HYBRID_DOCUMENT_SPLITTING_SKILL.md`
 
 This document includes:
 - Complete process steps with YAML templates

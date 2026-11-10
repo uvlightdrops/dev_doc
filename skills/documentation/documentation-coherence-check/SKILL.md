@@ -144,4 +144,4 @@ grep "target:" ENDPOINT_CONSUMPTION_TUI.md
 
 ## Full Details
 
-See: `dev_doc/documentation-guidelines/DOCUMENTATION_ORGANIZATION_GUIDE.md`
+See: `dev_doc/doc/documentation-guidelines/DOCUMENTATION_ORGANIZATION_GUIDE.md`

@@ -58,4 +58,4 @@ Links use relative paths and semantic types:
 
 ## Full Details
 
-See: `dev_doc/documentation-guidelines/SEMANTIC_KNOWLEDGE_ORGANIZATION.md`
+See: `dev_doc/doc/documentation-guidelines/SEMANTIC_KNOWLEDGE_ORGANIZATION.md`

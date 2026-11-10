@@ -85,4 +85,4 @@ Make agent changes **obvious**, **reviewable**, and **undoable**. Humans stay in
 
 ## Full Details
 
-See: `dev_doc/documentation-guidelines/AGENTIC_DOCUMENTATION_PATTERNS.md`
+See: `dev_doc/doc/documentation-guidelines/AGENTIC_DOCUMENTATION_PATTERNS.md`

@@ -5,6 +5,15 @@ agent-skill collection for the KI ecosystem. Keep documentation here
 project-agnostic; project-specific implementation details belong in the
 owning repository.
 
+Shared knowledge content lives in `doc/`, the Wissenswiki documentation-domain
+root. Keep `agent-instructions/`, `skills/`, `scripts/` and `.github/` at their
+stable repository-level paths.
+
+Reusable cross-project agent guidance is indexed in
+[`agent-instructions/README.md`](../agent-instructions/README.md). Project
+repositories should direct agents to that index and the topic files relevant
+to their task.
+
 ## Documentation skills
 
 Before any task, review the descriptions in `skills/*/*/SKILL.md` and load

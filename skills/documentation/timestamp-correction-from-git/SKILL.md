@@ -57,4 +57,4 @@ done
 
 ## Full Details
 
-See: `dev_doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md`
+See: `dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md`

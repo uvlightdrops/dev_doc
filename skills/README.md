@@ -137,7 +137,7 @@ skills versioned and reference them in repository instructions if necessary.
 When creating a skill that other projects should use:
 
 1. Create in `dev_doc/skills/[category]/[skill-name]/SKILL.md`
-2. Add full documentation to `dev_doc/documentation-guidelines/`
+2. Add full documentation to `dev_doc/doc/documentation-guidelines/`
 3. Update this README with skill description
 4. Commit to dev_doc
 5. All projects automatically inherit the skill via symlink
@@ -145,10 +145,10 @@ When creating a skill that other projects should use:
 ## Full Skill Documentation
 
 Detailed guides for each skill are in:
-- `dev_doc/documentation-guidelines/SEMANTIC_KNOWLEDGE_ORGANIZATION.md`
-- `dev_doc/documentation-guidelines/AGENTIC_DOCUMENTATION_PATTERNS.md`
-- `dev_doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md`
-- `dev_doc/documentation-guidelines/HYBRID_DOCUMENT_SPLITTING_SKILL.md`
+- `dev_doc/doc/documentation-guidelines/SEMANTIC_KNOWLEDGE_ORGANIZATION.md`
+- `dev_doc/doc/documentation-guidelines/AGENTIC_DOCUMENTATION_PATTERNS.md`
+- `dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md`
+- `dev_doc/doc/documentation-guidelines/HYBRID_DOCUMENT_SPLITTING_SKILL.md`
 - `dev_doc/code-quality-guidelines/PYTHON_STYLE_GUIDE.md` (TBD)
 - `dev_doc/testing-guidelines/UNIT_TESTING_PATTERNS.md` (TBD)
 - `dev_doc/git-workflow-guidelines/COMMIT_MESSAGE_STANDARDS.md` (TBD)

@@ -1,121 +1,64 @@
-# 🌍 Cross-Project Developer Documentation
-
-**Location**: `/home/flow/dev_doc/`  
-**Purpose**: Shared standards, architecture patterns, and best practices across all KI ecosystem projects  
-**Status**: ✅ Active & Maintained
-
+---
+project: dev_doc
+agent_project: ki-ecosystem
+scope: navigation
+purpose: Entry point for shared documentation and agent tooling
+created: null
+updated: "2026-11-10 20"
+update_reason: Separate documentation content from technical entry points
+status: active
+semantic_blocks: [repository-layout, starting-points]
+relations:
+  - target: doc/README.md
+    type: child
+    reason: Shared knowledge and Wissenswiki documentation domain
+  - target: agent-instructions/README.md
+    type: reference
+    reason: Cross-project agent instructions
 ---
 
-## 🎯 What Is This?
+# Cross-project developer documentation
 
-This folder contains **evergreen documentation** that applies across multiple projects:
+Shared standards, architecture patterns and administration guides for the KI
+ecosystem live in [`doc/`](doc/README.md). Project-specific implementation
+documentation stays in the owning project's documentation folder.
 
-- ✅ Architecture patterns and design decisions
-- ✅ Development standards (code organization, shell scripts, etc.)
-- ✅ Operational guidelines (config, security, deployment)
-- ✅ Development tools guidance (Copilot, TUI frameworks)
-- ✅ Multi-project coordination (orchestration, version alignment)
+## Repository layout [repository-layout]
 
-**Not** included here:
-- ❌ Project-specific implementation details (see `~/dev_flow/project/doc/`)
-- ❌ Session reports (see `~/dev_flow/REPORTS/`)
-- ❌ Archived patterns (see `~/dev_doc/archive/`)
-
----
-
-## 🚀 Quick Start: What Do You Need?
-
-### Documentation Maintainers
-→ **Start here:** [`documentation-guidelines/`](documentation-guidelines/)  
-- How to organize project docs, YAML headers, archival policy
-
-### Copilot / AI-Assisted Sessions
-→ **Start here:** [`copilot-memory/`](copilot-memory/)  
-- Session memory best practices, checkpoints, scope
-
-### Developers (Code & Deployment)
-→ **Start here:** [Quick Reference by Role](#-quick-reference-by-role) below
-
----
-
-## 📂 Folder Structure
-
-```
-/home/flow/dev_doc/
-├── README.md                            ← Overview (you are here)
-├── INDEX.md                             ← Complete file listing with descriptions
-│
-├── documentation-guidelines/            ← Doc standards & best practices
-│   ├── ORGANIZATION_GUIDE.md           ← Project folder structure
-│   ├── MAINTENANCE_STANDARDS.md         ← YAML headers, archival
-│   ├── QUALITY_QUERY.md                ← Quality checklist
-│   └── STRUCTURE_MAP.md                ← Knowledge organization
-│
-├── copilot-memory/                      ← AI session management
-│   ├── MEMORY_MAP.md                  ← Memory scope & lifecycle
-│   ├── SESSION_INDEX.md               ← Checkpoint tracking
-│   └── DOCUMENTATION_BEHAVIOR.md      ← Session documentation patterns
-│
-├── architecture/                        ← System design patterns
-├── cli-management/                      ← CLI architecture & delegation
-├── server-mngm/                         ← Server orchestration (historical)
-│
-└── Root-level technical guides:
-    ├── yaml_config_administration.md   ← Config systems (8-layer merge)
-    ├── security_guidelines.md          ← Security practices
-    ├── shell_execution_patterns.md     ← Shell scripting standards
-    ├── script_organization_standards.md ← Code organization
-    ├── textual_tui_best_practices.md   ← TUI development (Textual)
-    ├── ai_agent_intelligence_architecture.md ← Agent theory (4-stage)
-    ├── ai_agent_architecture_review.md  ← Implementation patterns
-    ├── MULTI_REPO_ORCHESTRATION_STUDY.md ← Multi-repo coordination
-    ├── SERVICE_ORCHESTRATION_PATTERN.md ← stackctl + Layer 1 design
-    └── TUI_STRATEGY_CLARIFICATION.md   ← TUI 2.0 multi-target approach
+```text
+dev_doc/
+├── README.md
+├── doc/                         # Knowledge content; Wissenswiki domain root
+│   ├── README.md
+│   ├── INDEX.md
+│   ├── architecture/
+│   ├── cli-management/
+│   ├── copilot-memory/
+│   ├── documentation-guidelines/
+│   ├── server-mngm/
+│   ├── wissenswiki/
+│   └── *.md                     # Cross-project technical guides
+├── agent-instructions/          # Stable instruction entry points
+├── skills/                      # Shared agent skills; keep symlink targets stable
+├── scripts/                     # Documentation tooling
+└── .github/                     # Copilot instructions, prompts and skills link
 ```
 
----
+For Wissenswiki, select `~/dev_doc/doc` as the documentation source. Keep
+additional relation data outside this source tree. Technical instructions and
+skills deliberately remain outside the knowledge domain; project symlinks to
+`dev_doc/skills` do not change.
 
-## 🎯 Quick Reference by Role
+## Starting points [starting-points]
 
-| Role | Start With | Next | Then |
-|------|-----------|------|------|
-| **Doc Maintainer** | `documentation-guidelines/ORGANIZATION_GUIDE.md` | [`INDEX.md`](INDEX.md) | Create/update docs |
-| **Backend Dev** | `script_organization_standards.md` | `security_guidelines.md` | Project `doc/` |
-| **DevOps/SRE** | `yaml_config_administration.md` | `SERVICE_ORCHESTRATION_PATTERN.md` | Project deployment/ |
-| **Frontend/TUI** | `textual_tui_best_practices.md` | `TUI_STRATEGY_CLARIFICATION.md` | Project frontend-*/ |
-| **AI/Agent Eng** | `ai_agent_intelligence_architecture.md` | `ai_agent_architecture_review.md` | Project AGENTS.md |
-| **Tech Lead** | `documentation-guidelines/` | `MULTI_REPO_ORCHESTRATION_STUDY.md` | Session reports |
-| **Copilot User** | `copilot-memory/MEMORY_MAP.md` | `copilot-memory/SESSION_INDEX.md` | Work with AI |
+| Audience | Start here |
+|---|---|
+| Knowledge readers | [Documentation hub](doc/README.md), [detailed index](doc/INDEX.md) |
+| Documentation maintainers | [Documentation standards](doc/documentation-guidelines/README.md) |
+| Developers and operators | [Technical guides](doc/README.md#technical-guides-technical-guides) |
+| Copilot users | [Memory guidance](doc/copilot-memory/README.md) |
+| Agents | [Shared instructions](agent-instructions/README.md), [skill registry](skills/README.md) |
 
----
-
-## 🔗 Documentation Levels
-
-### **Level 1: Global Standards** (this folder)
-- Cross-project patterns & best practices
-- Long-term, evergreen documentation
-- Applies to all 6 ecosystem projects
-
-### **Level 2: Project Implementation** (`~/dev_flow/project/doc/`)
-- Project-specific architecture
-- Feature documentation
-- Deployment procedures
-
-### **Level 3: Session Reports** (`~/dev_flow/REPORTS/`)
-- Time-bound coordination
-- Status updates (archived after 4 weeks)
-- Links to relevant docs
-
-### **Level 4: Archive** (`~/dev_flow/_archive/`)
-- Historical reference
-- Superseded documentation
-- Kept indefinitely
-
----
-
-## ✅ For Next Steps
-
-See [`INDEX.md`](INDEX.md) for a complete listing of all files with descriptions.
-
-**Last Updated**: 2026-11-05  
-**Status**: ✅ Current & Evergreen
+Historical proposals stay in their documented archive/reference sections.
+Session reports and product implementation details belong to the relevant
+workspace or project, not to this shared standards collection.
