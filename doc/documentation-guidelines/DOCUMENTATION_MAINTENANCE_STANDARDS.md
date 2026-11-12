@@ -3,8 +3,8 @@ title: Documentation Maintenance Standards
 project: KI-Ecosystem
 scope: Cross-project guidelines
 created: 2026-11-01 23
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+updated: "2026-11-11 15"
+update_reason: Sachbezogene Blockinhalte, Feature-/Architekturtrennung und Dokumentationsstatus präzisiert
 status: active
 author: Copilot
 purpose: Metadata, structure and maintenance rules for shared documentation
@@ -12,6 +12,7 @@ agent_project: ki-ecosystem
 semantic_blocks:
 - executive-summary
 - yaml-header-standard
+- block-metadaten
 - inhalt-struktur
 - projekt-uebergreifende-doku
 - update-workflow
@@ -75,60 +76,117 @@ agent_project: "kicli-code-assist"
 
 ---
 
+## Blockmetadaten [block-metadaten]
+
+```yaml block-meta
+updated: "2026-11-11 15"
+status: active
+relations:
+  - target: "SEMANTIC_KNOWLEDGE_ORGANIZATION.md#vision-semantic-knowledge-network"
+    type: reference
+    reason: "Semantisches Netzwerk verwendet diesen verbindlichen Blockvertrag"
+```
+
+**Verbindlicher Standard für neue oder gezielt überarbeitete semantische
+Blöcke:** Jeder Block besitzt die drei lokalen Attribute `updated`, `status`
+und `relations` als sichtbaren YAML-Codeblock mit Kennzeichnung
+`yaml block-meta` unmittelbar nach der H2-Überschrift. Seine stabile ID steht
+nur in der Überschrift. Die Attribute stehen nicht zusätzlich im Dateiheader.
+
+````markdown
+## Quellenmodell [quellenmodell]
+
+```yaml block-meta
+updated: "2026-11-11 05"
+status: active
+relations:
+  - target: "../features/QUELLEN.md#registrierung"
+    type: reference
+    reason: "Implementierter Ablauf zu diesem Modell"
+```
+
+Der Inhalt des Blocks folgt hier.
+````
+
+Die Kennzeichnung unterscheidet lokale Metadaten von normalen YAML-Beispielen.
+Metadaten werden nicht in HTML-Kommentaren versteckt. Der Dateiheader enthält
+nur dokumentweite Angaben; eine optionale reine `semantic_blocks`-ID-Liste
+ist ein Index, keine zweite Quelle für lokale Attribute. Sie kann entfallen,
+weil die IDs aus den Überschriften lesbar sind.
+Block-IDs sind eindeutig innerhalb einer Datei, stabil, kebab-case und
+höchstens 38 Zeichen lang. Jede echte H2-Überschrift besitzt genau einen
+lokalen Metadatenblock; Überschriften innerhalb von Codebeispielen zählen nicht.
+
+| Attribut | Verbindliche Bedeutung |
+|---|---|
+| `updated` | Letzte inhaltliche oder lokale Metadatenänderung dieses Blocks als zitierter String `YYYY-MM-DD HH`, ohne Minuten oder Zeitzone |
+| `status` | `draft` für unvollständige oder noch nicht ausreichend geklärte Dokumentation, `active` für im angegebenen Umfang hinreichend vollständigen und gepflegten Inhalt, `archived` für historischen, nicht mehr gepflegten Inhalt |
+| `relations` | Liste lokaler Beziehungen mit `target`, `type`, `reason`; ausdrücklich `[]`, wenn keine vorhanden sind |
+
+`active` ist keine Produktionsfreigabe und kein Beleg, dass ein beschriebenes
+Ziel bereits implementiert ist. Dokumentstatus und Blockstatus können sich
+unterscheiden. Dokumentweite Zeitstempel, Statuswerte und Relationen bleiben
+Dokumentkontext; sie werden nicht als eigene Blockwerte vererbt.
+
+Relationsziele verwenden einen relativen Dateipfad, bei Blockbezügen ergänzt
+um `#block-id`. Ein Bezug innerhalb derselben Datei verwendet `#block-id`.
+Die Auflösung erfolgt relativ zur Datei, nicht zum Überschriftentext.
+Standardtypen sind `depends-on`, `reference`, `parent` und `child`.
+Feature und Konzept werden auf den tatsächlich betroffenen Blöcken
+gegenseitig verbunden, beispielsweise `depends-on` ↔ `reference`.
+Dateibeziehungen werden nur zusätzlich gesetzt, wenn auch das gesamte
+Dokument diesen Bezug hat; Blockrelationen müssen nicht dupliziert werden.
+
+Bei Änderungen werden der betroffene Block und der Dokumentzeitstempel
+aktualisiert, nicht sämtliche unberührten Blöcke. Ziele, Block-IDs und
+passende Rückbeziehungen sind zu prüfen.
+`last_verified` oder andere Freshness-Angaben können ergänzen, ersetzen aber
+weder `updated` noch `status` oder `relations`.
+
+**Bestandspflege:** Bisherige reine ID-Listen bleiben ein Index, aber keine
+vollständige Umsetzung dieses Standards. Bereits im Header gespeicherte
+Blockattribute werden bei Überarbeitung zum betreffenden Abschnitt verlagert,
+nicht zusätzlich kopiert. Fehlende lokale Werte werden als fehlend
+ausgewiesen, nicht aus dem Dokument erfunden. Historische Änderungszeiten
+dürfen nicht geschätzt werden; für tatsächlich heute überarbeitete Blöcke
+gilt die aktuelle Stunde. Keine automatische Massenkonvertierung.
+Diese Metadatenkonvention allein implementiert noch keine Anzeige oder
+Auswertung in konsumierenden Anwendungen.
+
+---
+
 <a id="2-inhalt-struktur"></a>
 
 ## 2. Inhalt-Struktur [inhalt-struktur]
 
-### Klarheit: Aktuell vs. Vision vs. Problem
-
-Jedes Dokument muss **explizit kennzeichnen**, welche Info welche Kategorie ist:
-
-```markdown
-## Status Quo (Aktuell, ab 2026-11-01T23:00:00+01:00)
-
-[Beschreibung des HEUTIGEN Zustands]
-
-## Vision (Geplant, Zielstand)
-
-[Beschreibung des ZIELZUSTANDS]
-
-## Known Issues & Blockers
-
-[Probleme, die behoben werden müssen]
+```yaml block-meta
+updated: "2026-11-11 15"
+status: active
+relations: []
 ```
 
-### Beispiel-Struktur
+Der Inhalt eines Blocks arbeitet aus, was seine Überschrift benennt.
+Dokumentation beschreibt den Gegenstand direkt, statt das Gespräch, die
+Überlegungen des Agenten oder den Arbeitsverlauf nachzuerzählen. Solche
+Reflexion bleibt im Dialog; Änderungsherkunft steht in Metadaten und Git.
 
-```markdown
----
-title: "Agent Integration Architecture"
-status: "active"
-updated: 2026-11-01T23:58:00+01:00
----
+`features/` beschreibt ausschließlich implementierte Fähigkeiten, ihre
+Bedienung und tatsächlichen Grenzen. `architecture/` enthält die zugehörigen
+Überlegungen, Modelle, Alternativen und Begründungen. Betroffene Feature-
+und Architekturblöcke sind gegenseitig verlinkt, nicht doppelt ausgeführt.
 
-# Agent Integration Architecture
+Dokument- und Blockstatus zeigen den Stand der Dokumentation:
+`draft` bedeutet unvollständig oder noch zu klären, `active` im angegebenen
+Umfang hinreichend vollständig und gepflegt, `archived` historisch und nicht
+mehr gepflegt. Konkrete Dokumentationslücken werden bei Bedarf benannt;
+Vollständigkeitsprozente werden nicht erfunden. Auch ein Feature-Dokument
+mit Status `draft` beschreibt nur bereits implementierte Funktionen.
+Implementierungsgrad und Produktionsreife sind davon unabhängig.
 
-## Current State (as of 2026-11-01T23:58:00+01:00)
-
-- ✅ Phase 5.4 Complete (Autonomy 10/10)
-- ✅ Git + Testing + QC working
-- ❌ No dashboard integration yet
-- ❌ LLM transparency logging incomplete
-
-## Vision (Phase 6+)
-
-- [ ] Real-time agent telemetry dashboard
-- [ ] Agent reasoning trace UI
-- [ ] Cost tracking per agent operation
-- [ ] Integration with monitoring stack
-
-## Known Blockers
-
-| Blocker | Impact | Assigned | ETA |
-|---------|--------|----------|-----|
-| LLM call transparency | High | @uvlightdrops | 2026-11-15 |
-| Dashboard rendering | Medium | - | TBD |
-```
+Zukunftsideen sollen Platz behalten. Ihre dauerhafte Ablage ist vorerst offen;
+sie werden klar vom implementierten Bestand unterschieden. Daraus wird
+weder ein neuer Ordner noch ein Planungsprozess oder eine verbindliche
+Roadmap ohne ausdrückliche Entscheidung abgeleitet.
 
 ---
 

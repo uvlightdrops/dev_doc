@@ -1,17 +1,22 @@
 ---
+title: AI Agent Intelligence Architecture
 project: dev_doc
 scope: architecture
 purpose: Conceptual model and implementation proposal for cognitive and generative agents
 created: 2026-11-05 11
 agent_project: ki-ecosystem
 status: draft
+updated: "2026-11-12 10"
+update_reason: Move into the AI agents topic folder and link the topic index
 semantic_blocks:
 - agent-intelligence-levels
 - hybrid-layer-model
 - behavior-feedback-loop
 - implementation-roadmap
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+relations:
+  - target: README.md
+    type: parent
+    reason: AI agents topic index
 ---
 # Architektur-Konzept: Kognitive & Lernende Agenten-Architekturen
 
@@ -22,6 +27,24 @@ Dieses Dokument beschreibt die theoretischen Grundlagen von Agenten-Intelligenze
 <a id="1-die-grade-von-agenten-intelligenz-theoretische-einordnung"></a>
 
 ## 1. Die Grade von Agenten-Intelligenz (Theoretische Einordnung) [agent-intelligence-levels]
+
+```yaml block-meta
+updated: "2026-11-12 10"
+status: draft
+relations:
+  - target: "README.md#documents"
+    type: reference
+    reason: Topic index distinguishes this conceptual model from the architecture review
+  - target: "../../../dev_flow/kicli-code-assist/doc/architecture/AGENT_COORDINATION_ARCHITECTURE.md#references"
+    type: reference
+    reason: Assist architecture notes cite this theory as background
+  - target: "../../../dev_flow/kicli-code-assist/doc/backend/layer-3-autonomous-agent/AGENT_COORDINATION_ARCHITECTURE.md#references"
+    type: reference
+    reason: Layer 3 architecture notes cite this theory as background
+  - target: "../copilot-memory/COPILOT_MEMORY_MAP.md#stored-memories-persistent-across"
+    type: reference
+    reason: The memory map points readers to this agent-intelligence model
+```
 
 In der KI- und Simulationsforschung werden Agenten anhand ihrer kognitiven Fähigkeiten in fünf Entwicklungsstufen eingeteilt:
 

@@ -1,21 +1,26 @@
 ---
+title: AI Agent Architecture Review
 # NOTE: Moved from kicli-code-assist to ~/dev_doc
 # Original: kicli-code-assist/docs/architecture/AI_ARCHITECTURE_BEST_PRACTICES_REVIEW.md
 # This is generic - see project-specific implementations for adaptations
-update_reason: Validate YAML metadata and align semantic blocks with section headings
 project: dev_doc
 scope: architecture
 purpose: Review of AI architecture, safety, providers and context patterns
 created: 2026-11-05 11
 agent_project: ki-ecosystem
 status: draft
+updated: "2026-11-12 10"
+update_reason: Move into the AI agents topic folder and link the topic index
 semantic_blocks:
 - executive-summary
 - part-1-ai-architecture-overview
 - part-2-security-safety-patterns
 - part-3-llm-integration-provider
 - part-4-context-management
-updated: 2026-11-10 23
+relations:
+  - target: README.md
+    type: parent
+    reason: AI agents topic index
 ---
 
 # AI-Powered Application Architecture Review
@@ -28,6 +33,15 @@ updated: 2026-11-10 23
 <a id="executive-summary"></a>
 
 ## Executive Summary [executive-summary]
+
+```yaml block-meta
+updated: "2026-11-12 10"
+status: draft
+relations:
+  - target: "README.md#documents"
+    type: reference
+    reason: Topic index describing the scope and historical status of this review
+```
 
 kicli-code-assist exhibits **strong foundational AI architecture**:
 - ✅ **Excellent**: Security-first design with risk classification

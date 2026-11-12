@@ -4,8 +4,8 @@ project: Cross-Project
 scope: Navigation & Reference
 status: active
 created: 2026-11-05 23
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+updated: "2026-11-12 10"
+update_reason: Group AI-agent references and index architecture navigation with layout research
 purpose: Topic and audience index for shared knowledge
 agent_project: ki-ecosystem
 semantic_blocks:
@@ -140,11 +140,22 @@ repositories.
 
 <a id="️-architecture"></a>
 
-## 🏗️ Architecture [architecture]
+## Architecture [architecture]
+
+```yaml block-meta
+updated: "2026-11-12 07"
+status: active
+relations:
+  - target: "architecture/README.md#architecture-index"
+    type: reference
+    reason: Detailed architecture document index
+```
 
 System design patterns, multi-layer architecture, and integration patterns.
 
 ### `architecture/` (Folder)
+- **Index:** [Shared architecture topics](architecture/README.md#architecture-index)
+- **Layout research:** [Layout presets and workspaces](architecture/LAYOUT-PRESETS-UND-WORKSPACES.md) — responsive frameworks, IDE perspectives, persistence and an optional Widgetkit extension.
 - **Purpose:** Multi-layer architecture documentation and design patterns
 - **Contents:** Integration patterns, component relationships, system topology
 - **Audience:** Architects, system designers
@@ -219,7 +230,19 @@ Historical server management design documents (mostly superseded by stackctl).
 
 <a id="-technical-guides"></a>
 
-## 📖 Technical Guides [technical-guides]
+## Technical Guides [technical-guides]
+
+```yaml block-meta
+updated: "2026-11-12 10"
+status: active
+relations:
+  - target: "README.md#technical-guides"
+    type: reference
+    reason: Concise overview of the technical guides in the knowledge hub
+  - target: "ai-agents/README.md#documents"
+    type: reference
+    reason: Focused index of shared AI-agent documentation
+```
 
 Technical documentation directly inside `doc/`.
 
@@ -278,25 +301,10 @@ Technical documentation directly inside `doc/`.
   - Accessibility in terminal UIs
 - **When to Read:** Building TUI applications or improving TUI code quality
 
-### `ai_agent_intelligence_architecture.md`
-- **Purpose:** AI agent theory and 4-stage implementation plan
-- **Audience:** AI/ML engineers, agent system designers
-- **Key Topics:**
-  - Cognitive AI vs. Generative AI
-  - 4-stage implementation (Foundation → Reasoning → Autonomy → Optimization)
-  - IA3 SimWorld agent architecture
-  - Integration with reasoning tracers
-- **When to Read:** Designing agent systems or understanding AI architecture decisions
-
-### `ai_agent_architecture_review.md`
-- **Purpose:** Review of agent architecture implementation patterns
-- **Audience:** Architecture reviewers, agent developers
-- **Key Topics:**
-  - Architecture pattern analysis
-  - Reasoning and autonomy systems
-  - Multi-agent coordination
-  - Performance characteristics
-- **When to Read:** Evaluating or refining agent implementations
+### AI agents
+- **Index:** [Shared AI-agent documents](ai-agents/README.md)
+- **Purpose:** Locate the cross-project architecture review and conceptual agent model
+- **Audience:** AI/ML engineers, agent system designers, architecture reviewers
 
 ### `MULTI_REPO_ORCHESTRATION_STUDY.md`
 - **Purpose:** Multi-project coordination and dependency management
@@ -334,7 +342,19 @@ Technical documentation directly inside `doc/`.
 
 <a id="️-how-files-are-organized"></a>
 
-## 🗂️ How Files Are Organized [how-files-are-organized]
+## How Files Are Organized [how-files-are-organized]
+
+```yaml block-meta
+updated: "2026-11-12 10"
+status: active
+relations:
+  - target: "README.md#knowledge-folders"
+    type: reference
+    reason: Folder overview in the knowledge hub
+  - target: "ai-agents/README.md#documents"
+    type: reference
+    reason: Focused index of shared AI-agent documentation
+```
 
 ### By Purpose
 
@@ -346,7 +366,7 @@ Technical documentation directly inside `doc/`.
 | **Security** | `security_guidelines.md` |
 | **Scripting** | `shell_execution_patterns.md`, `script_organization_standards.md` |
 | **Frontend** | `textual_tui_best_practices.md`, `TUI_STRATEGY_CLARIFICATION.md` |
-| **AI/Agents** | `ai_agent_*.md` |
+| **AI/Agents** | `ai-agents/` |
 | **Deployment** | `SERVICE_ORCHESTRATION_PATTERN.md`, `MULTI_REPO_ORCHESTRATION_STUDY.md` |
 | **CLI** | Files in `cli-management/` |
 | **Architecture** | Files in `architecture/` |
@@ -360,7 +380,7 @@ Technical documentation directly inside `doc/`.
 | **Backend Devs** | `script_organization_standards.md`, `security_guidelines.md`, `yaml_config_administration.md` |
 | **Frontend/TUI Devs** | `textual_tui_best_practices.md`, `TUI_STRATEGY_CLARIFICATION.md` |
 | **DevOps/SRE** | `yaml_config_administration.md`, `SERVICE_ORCHESTRATION_PATTERN.md`, `security_guidelines.md` |
-| **AI/ML Engineers** | `ai_agent_intelligence_architecture.md`, `ai_agent_architecture_review.md` |
+| **AI/ML Engineers** | `ai-agents/README.md` |
 | **Tech Leads** | All guidelines + `MULTI_REPO_ORCHESTRATION_STUDY.md` |
 | **Copilot Users** | `copilot-memory/` folder |
 | **Architects** | `architecture/`, `SERVICE_ORCHESTRATION_PATTERN.md`, `MULTI_REPO_ORCHESTRATION_STUDY.md` |
@@ -376,7 +396,16 @@ Technical documentation directly inside `doc/`.
 
 <a id="-search-tips"></a>
 
-## 🔍 Search Tips [search-tips]
+## Search Tips [search-tips]
+
+```yaml block-meta
+updated: "2026-11-12 10"
+status: active
+relations:
+  - target: "ai-agents/README.md#documents"
+    type: reference
+    reason: Topic index answers where to find the shared AI-agent documents
+```
 
 **"Where do I find...?"**
 
@@ -391,7 +420,7 @@ Technical documentation directly inside `doc/`.
 | How to write shell scripts? | `shell_execution_patterns.md` |
 | How to organize Python code? | `script_organization_standards.md` |
 | How to build a TUI? | `textual_tui_best_practices.md` |
-| How AI agents work? | `ai_agent_intelligence_architecture.md` |
+| Where are the shared AI-agent documents? | [AI agents](ai-agents/README.md) |
 | How to deploy services? | `SERVICE_ORCHESTRATION_PATTERN.md` |
 | How to coordinate multiple repos? | `MULTI_REPO_ORCHESTRATION_STUDY.md` |
 | How should CLI commands work? | `cli-management/CLI_ARCHITECTURE_ROADMAP.md` |
@@ -408,6 +437,15 @@ Technical documentation directly inside `doc/`.
 <a id="content-boundary"></a>
 
 ## Content boundary [content-boundary]
+
+```yaml block-meta
+updated: "2026-11-11 05"
+status: active
+relations:
+  - target: "README.md#domain-boundary"
+    type: reference
+    reason: Wissenswiki source boundary in the knowledge hub
+```
 
 The knowledge content is rooted at `doc/`; see the [folder hub](README.md).
 Technical [agent instructions](../agent-instructions/README.md) and

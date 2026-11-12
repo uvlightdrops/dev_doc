@@ -14,8 +14,8 @@ semantic_blocks:
 - most-critical-mistakes-self-reminder
 - quick-status-check-template
 - links-to-update-this-file
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+updated: "2026-11-12 10"
+update_reason: Update the path to the shared AI-agent intelligence document
 ---
 # Copilot Memory & Context Map
 
@@ -28,6 +28,15 @@ update_reason: Validate YAML metadata and align semantic blocks with section hea
 
 ## 🧠 Stored Memories (Persistent Across Sessions) [stored-memories-persistent-across]
 
+```yaml block-meta
+updated: "2026-11-12 10"
+status: active
+relations:
+  - target: "../ai-agents/AI_AGENT_INTELLIGENCE_ARCHITECTURE.md#agent-intelligence-levels"
+    type: reference
+    reason: The persistent-memory index points to this conceptual agent model
+```
+
 ### User-Scoped Memories (@uvlightdrops) - Apply Across ALL Repos
 
 | Memory | Key Fact | Citation | Status |
@@ -39,7 +48,7 @@ update_reason: Validate YAML metadata and align semantic blocks with section hea
 | Dependency auditing | Python-only scripts (no embedded Python in shell) | User input | ✅ Active |
 | Logging structure (NEW) | Logs → project-root/log/ with relative paths | `logging_integration.py:37-91` | ✅ Active |
 | Deployment notification | Inform user if make prod-update needed | User input | ✅ Active |
-| AI agent architecture | 4-stage cognitive agent plan documented | `ai_agent_intelligence_architecture.md` | 📖 Reference |
+| AI agent architecture | Cognitive agent model and staged proposal | `../ai-agents/AI_AGENT_INTELLIGENCE_ARCHITECTURE.md` | 📖 Reference |
 | Multiplayer architecture | Namespace 'ia3-two', v1.0.70 tag | Various files | 📖 Reference |
 | Simulation mechanics | River generation, crop planting | Various files | 📖 Reference |
 | Environment | Ubuntu 24 Linux | User input | ✅ Noted |

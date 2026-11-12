@@ -5,8 +5,8 @@ agent_project: ki-knowledge
 scope: architecture
 purpose: Foundation for orphan-free, machine-readable documentation as semantic networks
 created: 2026-11-07 10
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+updated: 2026-11-11 05
+update_reason: Verbindlichen Blockmetadatenstandard von historischen Entwurfsbeispielen abgegrenzt
 status: draft
 cross_references:
 - ki-knowledge/docs (implementation)
@@ -61,7 +61,27 @@ semantic_blocks:
 
 ## Vision: Semantic Knowledge Network [vision-semantic-knowledge-network]
 
+```yaml block-meta
+updated: "2026-11-11 05"
+status: draft
+relations:
+  - target: "DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten"
+    type: depends-on
+    reason: "Verbindliche Blockmetadaten ersetzen die historischen Entwurfsvarianten"
+```
+
 ### Level 1: Explicit Metadata Layer
+**Current normative contract:** Each H2 heading carries its stable ID;
+its own visible `yaml block-meta` fence immediately below contains
+`updated`, `status` and `relations`, as defined in
+[Block metadata](DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten).
+Use `YYYY-MM-DD HH`, statuses `draft|active|archived` and local relation
+lists. Do not duplicate local attributes in document frontmatter.
+Document metadata is not inherited as local block metadata.
+The examples below are historical design sketches: their `stable` status,
+`version` fields and `[BLOCK: …]` heading syntax do not replace that
+contract. Current headings use `## Heading [block-id]`.
+
 Every `.md` file declares:
 ```yaml
 ---

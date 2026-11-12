@@ -14,8 +14,8 @@ semantic_blocks:
 - cross-referencing-rules
 - maintenance-checklist-monthly
 - summary-table
-updated: 2026-11-10 23
-update_reason: Validate YAML metadata and align semantic blocks with section headings
+updated: "2026-11-12 10"
+update_reason: Update the AI-agent documentation location in the navigation map
 ---
 # 📐 Documentation Structure Map
 
@@ -202,6 +202,15 @@ mv OLD_DOCUMENT.md _archive/OLD_DOCUMENT.md
 
 ## Navigation Decision Tree [navigation-decision-tree]
 
+```yaml block-meta
+updated: "2026-11-12 10"
+status: active
+relations:
+  - target: "../ai-agents/README.md#documents"
+    type: reference
+    reason: Topic index for the shared agent-intelligence concept in this map
+```
+
 ```
 START: I have a question about...
 
@@ -230,7 +239,7 @@ START: I have a question about...
 │
 ├─ "What's the theory behind...?" (Concepts)
 │  └─ ~/dev_doc/ (find by topic)
-│     ├─ ai_agent_intelligence_architecture.md (agents)
+│     ├─ ai-agents/README.md (shared agent documents)
 │     ├─ MULTI_REPO_ORCHESTRATION_STUDY.md (multi-repo)
 │     └─ yaml_config_administration.md (config system)
 │
@@ -333,4 +342,3 @@ Standard patterns: See /home/flow/dev_doc/doc/yaml_config_administration.md
 
 **Scope**: Cross-documentation coordination  
 **Next Review**: 2026-11-30
-
