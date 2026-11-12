@@ -19,6 +19,7 @@ skills/
 │   └── documentation-coherence-check/
 │
 ├── code-quality/          # Code style, API design and agent resilience
+├── webdesign/             # Cross-project web presentation rules
 ├── testing/               # Testing patterns & strategies
 └── git-workflow/          # Git & version control standards
 ```
@@ -98,6 +99,13 @@ also makes the intended workflow clear; invocation syntax depends on the client.
 | design-patterns-autonomy | Agent orchestration and lifecycle patterns |
 | error-handling-layer3 | Agent failure recovery, circuit breakers and tracing |
 
+### Webdesign Skills (1 skill)
+**Applicable to:** Content pages, application shells and standalone web pages
+
+| Skill | Purpose |
+|-------|---------|
+| compact-page-titles | Concise titles and compact headers without unrequested hero blocks |
+
 ### Testing Skills (3 skills)
 **Applicable to:** All projects
 
@@ -164,4 +172,4 @@ Detailed guides for each skill are in:
 ---
 
 **Maintained by:** Copilot + @uvlightdrops  
-**Last updated:** 2026-11-09
+**Last updated:** 2026-11-10
