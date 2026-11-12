@@ -5,8 +5,8 @@ agent_project: ki-ecosystem
 scope: architecture
 purpose: "Vergleicht Frameworkmuster für responsive Layouts, Perspektiven und gespeicherte Arbeitsbereiche und bewertet eine optionale Widgetkit-Erweiterung."
 created: "2026-11-12 07"
-updated: "2026-11-12 07"
-update_reason: "Primärquellenvergleich und abgegrenzten Widgetkit-Erweiterungsvorschlag erstellt"
+updated: "2026-11-12 15"
+update_reason: "CSS-Dateistruktur und schrittweisen Einstieg für wenige Grundlayouts konkretisiert"
 status: active
 relations:
   - target: README.md
@@ -128,7 +128,7 @@ ihres JSON-Formats zustandsneutral in jedes UI-Framework einsetzen.
 ## Abgeleitete Best Practices [layout-best-practices]
 
 ```yaml block-meta
-updated: "2026-11-12 07"
+updated: "2026-11-12 15"
 status: active
 relations: []
 ```
@@ -148,6 +148,43 @@ Eine sinnvolle Auflösungsreihenfolge ist Produktdefault → freigegebene
 Teamvorgabe → persönliche Abweichung → flüchtige Anpassung.
 Rechte und harte Mindestbedingungen werden danach weiterhin durchgesetzt.
 Diese Reihenfolge ist eine Produktentscheidung, keine allgemeine Norm.
+
+### Wenige Grundlayouts mit gemeinsamem CSS
+
+Für ungefähr fünf grundsätzlich unterschiedliche Layouts empfiehlt sich
+eine gemeinsame Basis plus je eine kleine Layoutdatei, statt einer Datei
+für jede Kombination aus Layout und Workflowzustand:
+
+| Ebene | Inhalt |
+|---|---|
+| Basis-CSS | Gemeinsame Gestaltung, Abstände, Panels, Formulare und Werkzeugleisten |
+| Layout-CSS je Grundlayout | Benannte Grid-Bereiche, Spaltengewichte, Mindestgrößen und responsive Regeln |
+| Zustandsregeln im Layout | Anpassungen für geöffnete Werkzeuge, verborgene Vorschau oder Navigation |
+| Gemeinsame JavaScript-Steuerung | Presetauswahl und ausdrücklich definierte Workflowübergänge |
+
+CSS Grid eignet sich für die großen zweidimensionalen Arbeitsbereiche,
+Flexbox für Werkzeugleisten und Buttonreihen. Ein Attribut wie
+`data-layout="vergleich"` wählt das Grundlayout; eine unabhängige Klasse
+wie `ai-open` beschreibt den momentanen Zustand. CSS Custom Properties
+können gemeinsame Größen und veränderliche Spaltengewichte ausdrücken.
+Ein Workflowübergang setzt die passenden Zustände, kopiert aber weder
+Editorlogik noch Templates und löst durch den Layoutwechsel allein keine
+fachlichen Aktionen aus.
+
+Die wenigen Layoutdateien können gemeinsam geladen oder zu einem Stylesheet
+gebündelt werden. Eindeutig auf das jeweilige Layout begrenzte Selektoren
+aktivieren dessen Regeln; ein dynamischer Austausch des Stylesheet-Links
+ist dafür nicht nötig. Das vermeidet zusätzliche Ladephasen beim Wechsel.
+Gemeinsame Komponentenregeln bleiben in der Basis, damit die Varianten
+nicht durch Kopien auseinanderlaufen.
+
+Der schrittweise Einstieg ist: vorhandene Gestaltung von Anordnungsregeln
+trennen, bestehende Ansichten als erste benannte Presets abbilden und
+weitere Grundlayouts ergänzen. DOM-Instanzen und fachlicher Zustand bleiben
+gemeinsam. Bei diesem Umfang sind etwa fünf kleine Layoutdateien plus
+Basis plausibel; zwölf bis fünfzehn Dateien sind keine notwendige Folge der
+Workflowkombinationen. Entscheidend ist die Zahl wirklich unterschiedlicher
+Anordnungen, nicht die Zahl aller Zustandskombinationen.
 
 ### Identität und Zustand erhalten
 
