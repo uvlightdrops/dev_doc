@@ -60,7 +60,54 @@ When editing doc paths:
 - Check: Does filename clearly relate to title content?
 - Check: Would someone find this doc by searching the title?
 
-### 6. Consistency Checks
+### 6. Block Content, Placement and Documentation Status
+- A block develops the subject named by its heading. Write direct subject
+  matter, not a retelling of the conversation, agent reasoning or work process.
+  Keep that reflection in the dialogue; keep change provenance in metadata
+  and Git rather than narrative additions to every block.
+- Subject documentation describes the intended, relevant behavior, not the
+  absence of defects or inappropriate elements. Do not turn routine cleanup
+  into a permanent feature statement (for example, "no prototype banner").
+  Keep resolved defects and removed mistakes in TODO/DONE, change metadata
+  or Git. Document negative statements only when they clarify a meaningful
+  boundary, guarantee, exception or compatibility constraint.
+- `features/` describes implemented capabilities, their operation and actual
+  limitations only. A draft feature document may describe existing functionality;
+  it must not present an unimplemented capability as a feature.
+- `architecture/` contains the associated considerations, models, alternatives
+  and rationale. Link the relevant feature and architecture blocks reciprocally
+  instead of mixing or duplicating their contents.
+- `status` describes the documentation, not implementation progress:
+  `draft` means incomplete or not yet sufficiently clarified documentation;
+  `active` means sufficiently complete and maintained for its stated scope;
+  `archived` means historical and no longer maintained. State specific gaps
+  when needed; do not invent completeness percentages. Apply this meaning
+  separately to document and block status.
+- Future ideas remain welcome, but their permanent location is intentionally
+  undecided. Keep them distinguishable from implemented features; do not
+  introduce a folder, workflow or roadmap by assumption.
+- If a project maintains a requirements index, read its current usage rules
+  and entries before acting. Simple fitting items may be implemented when
+  that index explicitly authorizes autonomous work; complex topics first
+  receive a linked architecture concept in the relevant block's relations.
+  Preserve user additions, distinguish open from implemented items, and
+  update the outcome without turning the index into a process manual.
+
+### 7. Consistency Checks
+New or deliberately revised semantic blocks require an ID in the H2
+heading and their own visible `yaml block-meta` fence immediately below
+with `updated`, `status` and `relations`. Do not duplicate local attributes
+in document frontmatter or hide them in HTML comments. Use quoted `YYYY-MM-DD HH`
+timestamps, `draft|active|archived` status, and relation lists containing
+`target`, `type`, `reason` (or `[]`). Document metadata remains separate.
+Verify relative `file.md#block-id` / `#block-id` targets and reciprocal
+block relations. Do not refresh untouched blocks or infer missing values.
+Legacy header ID indexes may remain; move header attributes to their
+section when upgrading, without duplication.
+For block metadata, this contract takes precedence over the older
+document timestamp examples above; see
+`dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten`.
+
 Markdown headings at level 2 or higher (`##`, `###`, etc.) must not contain emojis.
 
 Before committing:
@@ -94,6 +141,10 @@ Semantic Blocks:
   [ ] H2 headings have [block-id] tags
   [ ] Block IDs are unique in doc
   [ ] Block IDs are kebab-case ≤38 chars
+  [ ] Revised sections have visible local updated, status, relations
+  [ ] No local attributes duplicated in document frontmatter
+  [ ] Block timestamps change only for changed blocks
+  [ ] Block targets and reciprocal relations are valid
 
 Relations:
   [ ] All relations have target, type, reason
@@ -108,6 +159,11 @@ Cross-References:
   [ ] Grep verified no orphaned refs
 
 Consistency:
+  [ ] Each block develops its heading's subject, without dialogue/process narration
+  [ ] No permanent statements about removed defects or self-evident expected behavior
+  [ ] features/ contains implemented behavior only; architecture rationale is linked
+  [ ] Status reflects documentation completeness, not implementation progress
+  [ ] Future ideas are distinguishable without imposing a new organization
   [ ] Timestamps format consistent
   [ ] H2-and-higher Markdown headings contain no emojis
   [ ] No duplicate content across docs

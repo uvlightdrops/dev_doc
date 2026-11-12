@@ -50,6 +50,11 @@ for API contract details.
 
 ### Step 3: Verify Logical Flow
 In each doc:
+- [ ] Does each block develop the subject named by its heading, rather than narrate the dialogue or agent work?
+- [ ] Does subject documentation omit removed defects and self-evident expected behavior, retaining negative statements only for meaningful boundaries, guarantees or exceptions?
+- [ ] Does `features/` describe implemented behavior only, with linked considerations in `architecture/`?
+- [ ] Does document/block status express documentation completeness rather than implementation progress?
+- [ ] Are future ideas distinguishable without assuming a permanent location or a new roadmap?
 - [ ] Does section order make sense?
 - [ ] Does each section lead naturally to the next?
 - [ ] Are prerequisites introduced before dependencies?
@@ -99,6 +104,18 @@ Ask for each doc:
   - ❌ Doesn't contain: Backend database schema, API internals, backend performance tuning
 
 ### Step 6: YAML Header Consistency
+Also check each new or deliberately revised H2 section: its stable ID
+is in the heading, and a visible `yaml block-meta` fence immediately below
+contains local `updated` (quoted `YYYY-MM-DD HH`), `status`
+(`draft|active|archived`) and `relations` (list or `[]`).
+Do not duplicate these attributes in document frontmatter or HTML comments.
+Document metadata is context, not a fallback for missing block values.
+Feature/concept relationships should identify the actual blocks with
+relative `file.md#block-id` targets and semantically appropriate reciprocal
+relations. Update only changed blocks; do not bulk-convert legacy entries.
+See the authoritative contract:
+`dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten`.
+
 Both docs should have proper headers:
 ```yaml
 ---

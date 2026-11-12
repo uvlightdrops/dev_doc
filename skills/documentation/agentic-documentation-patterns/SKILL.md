@@ -14,7 +14,11 @@ Patterns for documentation that agents (like me) will modify while maintaining h
 ## Core Patterns
 
 ### 1. Signed Commit Blocks
-When an agent modifies a section:
+Prefer existing change metadata and Git history for agent provenance. Do not
+automatically append agent edit logs or process retrospectives to subject
+documentation: each block develops what its heading names. Dialogue and agent
+reasoning remain in the conversation. Use a visible signed change log only
+when the document explicitly requires one, for example:
 ```markdown
 [Last updated by Agent on 2026-11-07 10:30 - regenerated from codebase scan]
 
@@ -63,6 +67,16 @@ agent_change_proposal:
 ```
 
 ### 4. Freshness Metadata
+Freshness fields complement, not replace, the required local block
+attributes `updated`, `status` and `relations`. Store those attributes
+in a visible `yaml block-meta` fence immediately below the H2 heading
+using quoted `YYYY-MM-DD HH`,
+`draft|active|archived`, and a relation list (or `[]`). Do not inherit
+document metadata, duplicate local attributes in document frontmatter,
+or refresh unchanged blocks when another section changes.
+The authoritative contract is
+`dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten`.
+
 Track how "fresh" each section is:
 ```yaml
 freshness_metadata:

@@ -11,7 +11,8 @@ allowed-tools: []
 
 Every major section (H2 heading) in a well-structured doc gets a unique semantic block ID, making docs queryable by tools and easier for humans to reference.
 
-**⚠️ CRITICAL: Tags must appear BOTH in YAML header AND on H2 headings themselves**
+**Required: stable ID in every H2 heading and visible local metadata below it.
+Do not duplicate local attributes in document frontmatter.**
 
 ## Block ID Format
 
@@ -21,16 +22,22 @@ Every major section (H2 heading) in a well-structured doc gets a unique semantic
 - **Unique:** No duplicates within a single doc
 - **Stable:** Don't change IDs once published (breaks links)
 
-## Tagging Format - BOTH LOCATIONS REQUIRED
+## Tagging Format
 
-### 1. YAML Header (REQUIRED)
-```yaml
----
-semantic_blocks: [overview, component-inventory, design-principles, implementation-order, data-structures]
----
+### 1. Local metadata (REQUIRED)
+````markdown
+## Overview [overview]
+
+```yaml block-meta
+updated: "2026-11-11 05"
+status: active
+relations: []
 ```
 
-### 2. H2 Heading Tags (REQUIRED - DO NOT SKIP!)
+Section content.
+````
+
+### 2. H2 Heading Tags
 ```markdown
 ## Overview [overview]
 
@@ -50,7 +57,17 @@ More content...
 ...
 ```
 
-**Verification:** Count H2 headings = Count semantic_blocks entries
+**Verification:** Count real H2 headings = Count local metadata fences.
+Ignore headings inside fenced examples. An optional `semantic_blocks`
+header list contains IDs only and must match headings if present.
+
+Each new or deliberately revised block requires local `updated`, `status`
+and `relations` directly below its heading, not in the header. Use quoted `YYYY-MM-DD HH`,
+`draft|active|archived`, and a relation list with `target`, `type`, `reason`
+or `[]`. Local values are not inherited from document metadata.
+Update only changed blocks; preserve stable IDs. Legacy ID-only indexes may remain, but do not count as complete metadata.
+The authoritative contract is
+`dev_doc/doc/documentation-guidelines/DOCUMENTATION_MAINTENANCE_STANDARDS.md#block-metadaten`.
 
 ## Typical Block IDs in kicli-code-assist
 
@@ -73,18 +90,11 @@ More content...
 - `next-steps` — What's planned
 - `known-limitations` — Caveats
 
-## Blocks NOT Marked
+## Heading coverage
 
-Support sections typically don't need IDs:
-- Single `## Examples` section (obvious)
-- `## See Also` (self-explanatory)
-- `## Testing` (transient)
-- `## Backward Compatibility` (standard section)
-
-Only mark if the section is:
-- Referenced from other docs
-- A major topic
-- Likely to be queried/analyzed
+Every H2 heading is a semantic block and requires an ID and local
+metadata fence, including examples, testing and reference sections.
+H3 subsections do not automatically create separate semantic blocks.
 
 ## Relations to Blocks
 
@@ -97,6 +107,10 @@ relations:
 ```
 
 (Note: Path#block-id syntax for cross-doc block refs)
+
+For a relationship originating from a particular block, put this list
+inside that block's local `yaml block-meta` fence rather than at document level.
+Verify the target block and a semantically appropriate reciprocal relation.
 
 ## Full Details
 
